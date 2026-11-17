@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · The Epstein Files - Lion Studios
+# (c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary. Built by Sunny Chase (https://github.com/sunnychase) with Claude (Anthropic) · The Epstein Files - Lion Studios
 """enrich.py -- PUBLIC FIGURES: for the people who share the most pages with a focus person (default Jeffrey Epstein), look up a Wikipedia
 article whose title is EXACTLY the name (a disambiguating suffix like ", Duke of York" is allowed; a redirect to another title is not: same-name
 people exist). The article's one-line description sorts the person into a category (politics / government, business / finance / technology,

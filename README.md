@@ -1,5 +1,7 @@
 # The Epstein Files - Lion Studios
 
+(c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary software: see LICENSE.
+
 **A detective's desk for public records: every person, place, date and thing in the Epstein court and government files, every link between them backed by a quoted page, and a case notebook.** One small Python server (standard library + SQLite), any browser.
 
 *Created by [Sunny Chase](https://github.com/sunnychase) in collaboration with Claude (Anthropic).*
