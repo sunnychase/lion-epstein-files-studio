@@ -1,0 +1,64 @@
+name: Feature request
+description: Suggest one focused improvement or a new public source
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One idea per request, please. For a new source, say who published it, where it is mirrored, and its shape
+        (PDFs, one PDF per document, or a load-file production).
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you file
+      options:
+        - label: I searched the open and closed issues and pull requests for the same idea.
+          required: true
+        - label: The idea keeps the redactions redacted and every link backed by its pages.
+          required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - A new public source
+        - Ingest and entity recognition
+        - Search, people & things, graph, path finder
+        - 3D bubbles or the globe
+        - Money, timeline, patterns
+        - Notebook and exports
+        - Server, configuration, image packs
+        - Phone layout
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What is hard or impossible today, and when do you run into it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you would like
+      description: What the studio should do, and how you would know it works.
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source, provenance and shape
+      description: For a new source, the publisher, the archive.org item or URL, its shape, its size, and whether it is a public record.
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered

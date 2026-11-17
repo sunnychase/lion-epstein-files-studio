@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: compile, page script, hygiene (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: python -m py_compile on every .py
+        run: bash scripts/check.sh py
+      - name: node --check on the page scripts
+        run: bash scripts/check.sh js
+      - name: no home paths, private addresses, token-shaped strings or keys files
+        run: bash scripts/check.sh hygiene
+  rust:
+    name: cargo check (the server)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: rust
+      - name: cargo check
+        run: cd rust && cargo check --locked

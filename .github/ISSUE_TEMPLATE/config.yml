@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://github.com/sunnychase/lion-epstein-files-studio#readme
+    about: Quick start, how it works, sources, configuration, limits and the FAQ; docs/GETTING-STARTED.md for the full walk-through.
+  - name: Report a security problem privately
+    url: https://github.com/sunnychase/lion-epstein-files-studio/security/policy
+    about: Please do not open a public issue for security problems.
