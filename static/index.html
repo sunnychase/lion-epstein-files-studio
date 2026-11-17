@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lion Epstein Files Studio</title>
+<!-- Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) -->
+<style>
+:root{--bg:#0f1115;--panel:#171a21;--line:#262b36;--ink:#e6e8ee;--dim:#9aa3b2;--acc:#d9a441;--p:#5aa9e6;--o:#8fd18f;--pl:#e08a7a;--r:#c45bd3;--d:#c9c9c9;--m:#79c7c0;--hi:#3b3310}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,Segoe UI,Roboto,sans-serif}
+header{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+header h1{font-size:16px;margin:0;color:var(--acc);letter-spacing:.3px}header .sub{color:var(--dim);font-size:12px}
+nav{display:flex;gap:4px;flex-wrap:wrap}nav button{background:transparent;border:1px solid var(--line);color:var(--ink);padding:6px 11px;border-radius:7px;cursor:pointer}nav button.on{background:#232838;border-color:var(--acc)}
+#groups button{font-weight:600;letter-spacing:.2px}#tabs button{display:none;font-size:13px;padding:4px 10px;border-color:transparent;color:var(--dim)}#tabs button.show{display:inline-block}#tabs button.on{color:var(--ink);border-color:var(--line);background:#1d222c}
+main{padding:14px 16px;max-width:1500px;margin:0 auto}section{display:none}section.on{display:block}
+input,select,textarea{background:#0b0d12;border:1px solid var(--line);color:var(--ink);padding:7px 9px;border-radius:7px;font:inherit}input[type=text],input[type=search]{min-width:260px}
+button.act{background:var(--acc);color:#111;border:0;padding:7px 12px;border-radius:7px;cursor:pointer;font-weight:600}button.sm{padding:3px 8px;font-size:12px;background:#232838;color:var(--ink);border:1px solid var(--line);border-radius:6px;cursor:pointer}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0}.card h3{margin:0 0 8px;font-size:14px;color:var(--acc)}
+.hit{border-top:1px solid var(--line);padding:8px 0}.hit:first-child{border-top:0}.snip{color:var(--ink)}.snip b,mark{background:var(--hi);color:#ffe9a8;padding:0 2px;border-radius:3px}
+.meta{color:var(--dim);font-size:12px}.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;margin:2px 3px 2px 0;border:1px solid var(--line);cursor:pointer;color:var(--ink)}
+.PERSON{border-color:var(--p)}.ORG{border-color:var(--o)}.PLACE{border-color:var(--pl)}.REDACTION{border-color:var(--r);background:#2a1430}.DATE{border-color:var(--d)}.EMAIL,.PHONE,.TAIL,.CASE{border-color:var(--m)}.MONEY{border-color:#d2b45a}
+a,.lnk{color:var(--p);cursor:pointer;text-decoration:none}.lnk:hover{text-decoration:underline}table{border-collapse:collapse;width:100%}td,th{padding:5px 7px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--dim);font-weight:500;font-size:12px}
+#gsvg{width:100%;height:70vh;background:#0b0d12;border:1px solid var(--line);border-radius:10px}.quote{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;white-space:pre-wrap;background:#0b0d12;border-left:3px solid var(--acc);padding:6px 9px;margin:4px 0;border-radius:4px}
+.pageimg{max-width:100%;border:1px solid var(--line);border-radius:6px;background:#fff}.pagetext{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;white-space:pre-wrap;background:#0b0d12;padding:10px;border-radius:8px;max-height:70vh;overflow:auto}
+.notice{border:1px solid var(--r);background:#1d1222;border-radius:8px;padding:8px 10px;color:#e9c9f1;font-size:13px}.kpi{display:inline-block;margin:0 14px 6px 0}.kpi b{color:var(--acc);font-size:18px}
+.bulb{border-top:1px solid var(--line);padding:8px 0;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:start}.bulb .ico{font-size:22px;filter:drop-shadow(0 0 6px #ffd86b);animation:glow 2.4s ease-in-out infinite}@keyframes glow{0%,100%{opacity:.55}50%{opacity:1}}.bulb .k{font-size:11px;color:var(--acc);text-transform:uppercase;letter-spacing:.4px}
+.legend span{margin-right:10px;font-size:12px}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:middle}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>Lion Epstein Files Studio</h1><div class="sub">Public court and government records · every link backed by a quoted page · redacted parties stay redacted</div></div>
+  <nav id="groups">
+    <button data-g="desk" class="on">Desk</button><button data-g="explore">Explore</button><button data-g="connect">Connections</button><button data-g="investigate">Investigate</button><button data-g="notes">Notebook</button>
+  </nav>
+  <nav id="tabs" style="width:100%;margin-top:4px">
+    <button data-t="dash" data-g="desk" class="on">Dashboard</button><button data-t="timeline" data-g="desk">Timeline</button>
+    <button data-t="search" data-g="explore">Search</button><button data-t="people" data-g="explore">People &amp; things</button><button data-t="docs" data-g="explore">Documents</button><button data-t="emails" data-g="explore">E-mails</button><button data-t="photos" data-g="explore">Photos</button>
+    <button data-t="graph" data-g="connect">Graph</button><button data-t="g3d" data-g="connect">3D bubbles</button><button data-t="globe" data-g="connect">Globe &amp; flights</button><button data-t="path" data-g="connect">Path finder</button>
+    <button data-t="leads" data-g="investigate">Leads</button><button data-t="money" data-g="investigate">Money</button><button data-t="figures" data-g="investigate">Public figures</button><button data-t="redact" data-g="investigate">Redactions</button>
+    <button data-t="notebook" data-g="notes">Case notebook</button>
+  </nav>
+  <div id="kpis" class="meta"></div>
+</header>
+<main>
+
+<section id="dash" class="on">
+  <div id="bulbs" class="card" style="border-color:var(--acc)"><h3>💡 Light bulbs</h3><div class="meta">finding the connections that no single page shows…</div></div>
+  <div id="dashbody"><div class="meta">loading the desk…</div></div>
+</section>
+
+<section id="timeline">
+  <div class="row"><input type="search" id="tlfocus" placeholder="the pages of… (a person; empty = every page)" list="gnames" style="min-width:260px"><select id="tllead"><option value="">no lead filter</option></select><label class="meta"><input type="checkbox" id="tlall"> all years (default 1990 on)</label><button class="act" onclick="loadTimeline()">Draw</button></div>
+  <div class="meta" id="tlnote"></div>
+  <div id="tlbars" style="display:flex;align-items:flex-end;gap:3px;height:220px;padding:10px 0;border-bottom:1px solid var(--line);overflow-x:auto"></div>
+  <div id="tlyear" class="card" style="display:none"></div>
+</section>
+
+<section id="search">
+  <div class="row"><input type="search" id="q" placeholder='words · "exact phrase" · a AND b · a OR b · NOT c · NEAR(flight massage, 8)' style="flex:1"><button class="act" onclick="doSearch()">Search pages</button></div>
+  <div class="meta">Full-text over every page (FTS5, stemmed). Each hit lists the people, places and other things found on that page: click one to open it, or open the page to read the scan.</div>
+  <div id="sres"></div>
+</section>
+
+<section id="people">
+  <div class="row">
+    <select id="etype"><option value="PERSON">People</option><option value="ORG">Organisations</option><option value="PLACE">Places</option><option value="DATE">Dates</option><option value="EMAIL">E-mail addresses</option><option value="PHONE">Phone numbers</option><option value="TAIL">Aircraft</option><option value="MONEY">Money</option><option value="CASE">Case numbers</option><option value="REDACTION">Redactions</option><option value="URL">Web links</option></select>
+    <input type="search" id="eq" placeholder="filter by name"><select id="esort"><option value="mentions">most mentioned</option><option value="docs">most documents</option><option value="name">A–Z</option></select>
+    <button class="act" onclick="loadEntities()">List</button>
+  </div>
+  <div class="cols"><div id="elist" class="card"></div><div id="edetail" class="card"><h3>Pick one</h3><div class="meta">Its documents, every quoted mention, who and what shares pages with it, and its dates.</div></div></div>
+</section>
+
+<section id="graph">
+  <div class="row">
+    <input type="search" id="gcenter" placeholder="centre on a person (type to pick)" list="gnames"><datalist id="gnames"></datalist>
+    <label>depth <select id="gdepth"><option>1</option><option>2</option></select></label>
+    <label>min shared pages <input type="number" id="gmin" value="5" min="1" style="width:70px"></label>
+    <label>types <input type="text" id="gtypes" value="PERSON,ORG,PLACE,REDACTION" style="min-width:230px"></label>
+    <label>limit <input type="number" id="glimit" value="60" min="10" max="400" style="width:70px"></label>
+    <button class="act" onclick="drawGraph()">Draw</button><button class="sm" onclick="document.getElementById('gcenter').value='';drawGraph()">Overview</button>
+  </div>
+  <div class="legend meta"><span><i style="background:var(--p)"></i>person</span><span><i style="background:var(--o)"></i>organisation</span><span><i style="background:var(--pl)"></i>place</span><span><i style="background:var(--r)"></i>redaction</span><span><i style="background:var(--m)"></i>e-mail / phone / aircraft</span> · node size = mentions · edge width = pages shared · click a node for its record, double-click to centre on it</div>
+  <svg id="gsvg"></svg>
+  <div id="gside" class="card" style="display:none"></div>
+</section>
+
+<section id="g3d">
+  <div class="row">
+    <input type="search" id="c3" placeholder="centre on a person (type to pick)" list="gnames"><label>network <select id="k3"><option value="co-page">pages shared</option><option value="emailed">e-mails exchanged</option><option value="paid">payments (payer → payee)</option></select></label>
+    <label>depth <select id="d3d"><option selected>1</option><option>2</option></select></label>
+    <label>min <input type="number" id="m3" value="8" min="1" style="width:60px"></label><label>types <input type="text" id="t3" value="PERSON" style="min-width:150px"></label>
+    <label>limit <input type="number" id="l3" value="60" min="10" max="600" style="width:60px"></label><button class="act" onclick="draw3d()">Draw bubbles</button><button class="sm" onclick="$('#c3').value='';draw3d()">Overview</button>
+  </div>
+  <div class="row"><b class="meta">Route:</b><input type="search" id="r3a" placeholder="from" list="gnames" style="min-width:200px"><input type="search" id="r3b" placeholder="to" list="gnames" style="min-width:200px"><button class="sm" onclick="route3d()">Pinpoint the route</button><button class="sm" onclick="clearRoute3d()">clear</button><span class="meta" id="r3note"></span></div>
+  <div class="meta">Shells: the centre person in the middle, the people who share pages with them on the first ring, grouped by what they are (politics, business, entertainment, law, media, royalty, other), the second ring beyond. Bubble size = mentions, line width = pages shared. A pinpointed route lights up gold through the bubbles; everything else dims. Click a bubble for its record, right-click to centre. Labels on the bigger bubbles; hover for the rest.</div>
+  <div style="position:relative"><div id="g3dbox" style="width:100%;height:72vh;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#05070b"></div><div id="g3labels" style="position:absolute;inset:0;pointer-events:none;overflow:hidden"></div></div>
+  <div id="g3side" class="card" style="display:none"></div>
+</section>
+
+<section id="globe">
+  <div class="row">
+    <input type="search" id="gbfocus" placeholder="the pages of… (a person; empty = every page)" list="gnames" style="min-width:260px">
+    <select id="gblead"><option value="">no lead filter</option></select>
+    <select id="gbkind"><option value="all">places + airports</option><option value="airports">airports (flight legs)</option><option value="places">cities and states</option><option value="countries">countries</option></select>
+    <label>min shared pages <input type="number" id="gbmin" value="8" min="1" style="width:60px"></label><label>arcs <input type="number" id="gbarcs" value="250" min="20" max="600" style="width:60px"></label>
+    <label class="meta"><input type="checkbox" id="gbphotos" checked> photo dots</label><label class="meta"><input type="checkbox" id="gbrot" checked> rotate</label>
+    <button class="act" onclick="drawGlobe()">Draw the globe</button>
+  </div>
+  <div class="meta">Every located place, airport and country in the files is a dot sized by the pages that mention it; an arc joins two located things that share a page (between airports, a flight leg). Photo dots (white) sit beside places whose documents hold picture pages. Drag to rotate, scroll to zoom, click a dot for the people and pages there. A location is where the words point, nothing more.</div>
+  <div style="position:relative"><div id="globebox" style="width:100%;height:74vh;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#000"></div></div>
+  <div id="gbside" class="card" style="display:none"></div>
+  <div class="card"><h3>Flight-record pages <button class="sm" onclick="loadFlights()">list</button></h3><div class="meta">pages that name two or more airports: the airports, the dates on the page and the people named on it</div><div id="flights"></div></div>
+</section>
+
+<section id="money">
+  <div class="row"><input type="search" id="mywho" placeholder="payer, payee or words" style="min-width:240px"><label>min $ <input type="number" id="mymin" value="1000" style="width:110px"></label><label>max $ <input type="number" id="mymax" value="100000000" style="width:110px"></label>
+    <select id="myflag"><option value="">any flag</option><option value="structuring">structuring (just under $10,000)</option><option value="round-large">round ≥ $100,000</option><option value="big">≥ $1 million</option><option value="to-individual">paid to an individual</option><option value="cash">cash</option><option value="foreign">foreign place on the page</option></select>
+    <select id="myverb"><option value="">any kind</option><option>wire</option><option>transfer</option><option>paid</option><option>received</option><option>deposit</option><option>withdrawal</option><option>check</option><option>invoice</option><option>loan</option><option>fee</option><option>settlement</option><option>donation</option><option>cash</option><option>purchase</option><option>salary</option><option>trust</option></select>
+    <select id="mysort"><option value="amount">largest first</option><option value="flags">most flags</option><option value="page">by page</option></select><select id="myrel"><option value="2" selected>pages with Epstein or Maxwell</option><option value="1">pages with Epstein's circle</option><option value="0">every page</option></select><label class="meta"><input type="checkbox" id="mypress"> include press / newsletter pages</label><button class="act" onclick="loadMoney()">Follow the money</button><button class="sm" ${""}onclick="$('#k3').value='paid';$('#c3').value='Jeffrey Epstein';$('#m3').value='1';document.querySelector('#tabs button[data-t=g3d]').click();draw3d()">payment network in 3D</button></div>
+  <div class="notice" id="mynote" style="border-color:#d2b45a;background:#1f1a0e;color:#f2e2b0"></div>
+  <div class="cols"><div id="mysum" class="card"></div><div id="mylist" class="card"></div></div>
+</section>
+
+<section id="emails">
+  <div class="row"><input type="search" id="emq" placeholder="subject / sender / recipient words" style="min-width:300px"><input type="search" id="emwho" placeholder="a name or address in From / To / Cc"><button class="act" onclick="loadEmails()">List e-mails</button><button class="sm" onclick="$('#k3').value='emailed';$('#c3').value='Jeffrey Epstein';document.querySelector('#tabs button[data-t=g3d]').click();draw3d()">e-mail network in 3D</button></div>
+  <div class="meta">Every printed e-mail header found on a page (From, Sent, To, Cc, Subject), with the page it is on. Senders and recipients are matched to people by name, or kept as addresses; a documented address of a known person (<code>email_owners.json</code>) counts as that person.</div>
+  <div class="cols"><div id="emlist" class="card"></div><div id="emsenders" class="card"></div></div>
+</section>
+
+<section id="photos">
+  <div class="row"><input type="search" id="phwho" placeholder="photos in documents that mention… (a name)" list="gnames" style="min-width:300px"><button class="act" onclick="loadPhotos()">Show</button><button class="sm" onclick="$('#phwho').value='';loadPhotos()">all photo pages</button><span class="meta" id="phnote"></span></div>
+  <div class="meta">Pages that are pictures (a stamp or no text). The studio reads nothing into a picture: a photo page belongs to a document, and the document's text is its only link to anyone. Click to open the page at full size.</div>
+  <div id="phgrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px"></div><div class="row"><button class="sm" onclick="loadPhotos(phOffset+120)">more</button></div>
+</section>
+
+<section id="figures">
+  <div class="row"><select id="fcat"><option value="">every category</option></select><button class="act" onclick="loadFigures()">List</button></div>
+  <div class="notice" id="fnote"></div>
+  <div id="flist" class="card"></div>
+</section>
+
+<section id="leads">
+  <div class="meta">Saved full-text searches for the themes of an investigation. A count is pages that use the words; open a lead to read the quotes and the people on each page. Add your own in the Search tab; pin what matters to the notebook.</div>
+  <div id="ldlist"></div>
+</section>
+
+<section id="path">
+  <div class="row"><input type="search" id="pa" placeholder="from (person, place, thing)" list="gnames"><input type="search" id="pb" placeholder="to" list="gnames"><label>max hops <input type="number" id="pmax" value="4" min="1" max="6" style="width:60px"></label><button class="act" onclick="findPath()">Find the chain</button></div>
+  <div class="meta">The chain of shared pages between two things, heaviest links first, with the quotes on the pages that make each hop. A hop means both appear on the same page, nothing more.</div>
+  <div id="pres"></div>
+</section>
+
+<section id="docs"><div id="dlist" class="card"></div></section>
+
+<section id="redact">
+  <div class="notice">Redacted parties stay redacted. This tab shows where each redaction label appears (Doe 3, [REDACTED] …), on which pages, and which named people, places and things share those pages, so the pattern can be studied. The studio never proposes who a redacted person is, and the notebook is yours alone.</div>
+  <div id="rlist"></div>
+</section>
+
+<section id="notebook">
+  <div class="card"><h3>Add a lead or note</h3>
+    <div class="row"><select id="nkind"><option value="lead">lead</option><option value="note">note</option><option value="question">open question</option></select><input type="text" id="ntitle" placeholder="title" style="flex:1"></div>
+    <textarea id="nbody" rows="4" style="width:100%" placeholder="what you found, and where (page numbers); pinned quotes from pages go here too"></textarea>
+    <div class="row"><button class="act" onclick="addNote()">Save</button><span class="meta">Pins from a page or a mention attach their page and quote automatically.</span></div>
+  </div>
+  <div id="nlist"></div>
+</section>
+
+<div id="pageview" class="card" style="display:none;position:fixed;inset:4vh 4vw;overflow:auto;z-index:9;background:var(--panel)">
+  <div class="row"><button class="sm" onclick="closePage()">✕ close</button><b id="pvtitle"></b><button class="sm" id="pvprev">◀ prev page</button><button class="sm" id="pvnext">next page ▶</button><button class="sm" onclick="pinPage()">📌 pin this page</button><label class="meta"><input type="checkbox" id="pvimg" checked onchange="renderPage()"> scan image</label></div>
+  <div id="pvtags"></div>
+  <div class="cols"><div id="pvimgbox"></div><div id="pvtext" class="pagetext"></div></div>
+</div>
+
+</main>
+<script src="vendor/d3.v7.min.js"></script>
+<script src="vendor/3d-force-graph.min.js"></script>
+<script src="vendor/globe.gl.min.js"></script>
+<script>
+const $=s=>document.querySelector(s);const ACT=[];const reg=f=>{ACT.push(f);return `onclick="ACT[${ACT.length-1}]()"`}; const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const api=async(u,o)=>{const r=await fetch(u,o);return r.json()};
+function showGroup(g){document.querySelectorAll('#groups button').forEach(x=>x.classList.toggle('on',x.dataset.g===g));document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('show',x.dataset.g===g))}
+document.querySelectorAll('#groups button').forEach(b=>b.onclick=()=>{showGroup(b.dataset.g);const first=document.querySelector(`#tabs button[data-g=${b.dataset.g}]`);if(first&&!document.querySelector(`#tabs button[data-g=${b.dataset.g}].on`))first.click()});
+document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{showGroup(b.dataset.g);document.querySelectorAll('#tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('main>section').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));if(b.dataset.t==='docs')loadDocs();if(b.dataset.t==='redact')loadRedactions();if(b.dataset.t==='notebook')loadNotes();if(b.dataset.t==='graph'&&!gdrawn)drawGraph();if(b.dataset.t==='g3d'&&!g3drawn)draw3d();if(b.dataset.t==='emails')loadEmails();if(b.dataset.t==='photos')loadPhotos();if(b.dataset.t==='figures')loadFigures();if(b.dataset.t==='leads')loadLeads();if(b.dataset.t==='dash')loadDash();if(b.dataset.t==='money')loadMoney();if(b.dataset.t==='timeline')loadTimeline();if(b.dataset.t==='globe'&&!GB)drawGlobe();});
+const tag=e=>`<span class="tag ${e.type}" onclick="openEntity(${e.id})" title="${e.type}">${esc(e.name)}</span>`;
+let curPage=null, pageData=null, gdrawn=false, g3drawn=false, G3=null, names=[];
+async function stats(){const s=await api('/api/stats');const e=s.entities||{};$('#kpis').innerHTML=`<span class="kpi"><b>${s.documents}</b> documents</span><span class="kpi"><b>${s.pages}</b> pages</span><span class="kpi"><b>${e.PERSON||0}</b> people</span><span class="kpi"><b>${e.ORG||0}</b> organisations</span><span class="kpi"><b>${e.PLACE||0}</b> places</span><span class="kpi"><b>${e.REDACTION||0}</b> redaction labels</span><span class="kpi"><b>${s.mentions}</b> quoted mentions</span>`;
+  const n=await api('/api/entities?type=PERSON,ORG,PLACE,REDACTION,EMAIL,TAIL&limit=2000');names=n.entities;$('#gnames').innerHTML=names.map(x=>`<option value="${esc(x.name)}">${x.type} · ${x.mentions} mentions</option>`).join('');}
+function byName(v){v=(v||'').trim().toLowerCase();if(!v)return null;return names.find(x=>x.name.toLowerCase()===v)||names.find(x=>x.name.toLowerCase().includes(v));}
+async function doSearch(){const q=$('#q').value;const d=await api('/api/search?q='+encodeURIComponent(q)+'&limit=60');if(d.error){$('#sres').innerHTML=`<div class="card">${esc(d.error)}</div>`;return}
+  $('#sres').innerHTML=`<div class="card"><div class="meta">${d.total??d.hits.length} page(s) match <code>${esc(d.q)}</code>; best ${d.hits.length} shown</div>`+d.hits.map(h=>`<div class="hit"><div class="meta"><span class="lnk" onclick="openPage(${h.page_id})">PDF page ${h.pdf_page}</span> · ${esc(h.docket?'Document '+h.docket:h.doc_title)}</div><div class="snip">${esc(h.snip).replace(/\[\[/g,'<mark>').replace(/\]\]/g,'</mark>')}</div><div>${(h.entities||[]).map(tag).join('')}</div></div>`).join('')+'</div>';}
+$('#q').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch()});
+async function loadEntities(){const t=$('#etype').value,q=$('#eq').value,s=$('#esort').value;const d=await api(`/api/entities?type=${t}&q=${encodeURIComponent(q)}&sort=${s}&limit=400`);
+  $('#elist').innerHTML=`<h3>${d.entities.length} ${t.toLowerCase()} entries</h3><table><tr><th>name</th><th>mentions</th><th>documents</th></tr>`+d.entities.map(e=>`<tr><td><span class="lnk" onclick="openEntity(${e.id})">${esc(e.name)}</span></td><td>${e.mentions}</td><td>${e.docs}</td></tr>`).join('')+'</table>';}
+$('#eq').addEventListener('keydown',e=>{if(e.key==='Enter')loadEntities()});
+async function openEntity(id){document.querySelector('#tabs button[data-t=people]').click();const e=await api('/api/entity/'+id);const tl=await api('/api/timeline?entity='+id);
+  const docs=e.documents.map(d=>`<tr><td><span class="lnk" onclick="openDoc(${d.id})">${esc(d.docket?'Document '+d.docket:d.title)}</span></td><td>${esc(d.filed||'')}</td><td>${d.n}</td><td><span class="lnk" onclick="openPage(${e.mentions.find(m=>m.doc_id===d.id)?.page_id||0})">p.${d.first_page}</span></td></tr>`).join('');
+  const con=e.connections.map(c=>`<tr><td>${tag({id:c.other_id,type:c.type,name:c.name})}</td><td>${c.weight}</td><td>${c.pages.slice(0,6).map(p=>`<span class="lnk" onclick="openPage(${p})">p</span>`).join(' ')}</td></tr>`).join('');
+  const men=e.mentions.map(m=>`<div class="hit"><div class="meta"><span class="lnk" onclick="openPage(${m.page_id})">PDF page ${m.pdf_page}</span> · Document ${esc(m.docket)} · as “${esc(m.surface)}” <button class="sm" ${reg(()=>pinQuote(m.page_id,m.pdf_page,m.quote,e.name))}>📌</button></div><div class="quote">${esc(m.quote).replace(new RegExp(esc(m.surface).replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i'),x=>'<mark>'+x+'</mark>')}</div></div>`).join('');
+  const dates=tl.dates.slice(0,60).map(d=>`<span class="tag DATE" title="${d.weight} shared page(s)" onclick="openPage(${d.pages[0]})">${esc(d.date)}</span>`).join('');
+  $('#edetail').innerHTML=`<h3>${esc(e.name)} <span class="tag ${e.type}">${e.type}</span></h3><div class="meta">${e.mentions.length} quoted mention(s) in ${e.documents.length} document(s)${e.aliases.length?' · aliases merged: '+esc(e.aliases.join(', ')):''} · <span class="lnk" ${reg(()=>{$('#gcenter').value=e.name;document.querySelector('#tabs button[data-t=graph]').click();drawGraph()})}>show in graph</span> · <span class="lnk" ${reg(()=>{$('#pa').value=e.name;document.querySelector('#tabs button[data-t=path]').click()})}>path from here</span></div>
+  ${e.type==='REDACTION'?'<div class="notice">A redaction label. Its context is shown; its identity is not inferred.</div>':`<div class="row"><button class="sm" ${reg(()=>lookup(e.id,e.name))}>look up on Wikipedia</button><a class="sm" style="text-decoration:none" href="https://duckduckgo.com/?q=${encodeURIComponent('"'+e.name+'" Epstein')}" target="_blank" rel="noopener">search the web ↗</a><span class="meta">what the open web says, kept apart from the files; never merged into the database</span></div><div id="lk${e.id}"></div>`}
+  ${e.profile?`<div class="card"><b>${esc(e.profile.title)}</b> <span class="tag" style="border-color:${CATCOL[e.profile.category]||'#555'}">${esc(e.profile.category)}</span> <span class="meta">${esc(e.profile.description||'')}</span><div class="meta">${esc(e.profile.extract||'')}</div><div class="meta">Wikipedia, exact title match, unverified · <a href="${esc(e.profile.url)}" target="_blank" rel="noopener">open ↗</a></div></div>`:''}
+  <div class="row">${e.photos?`<button class="sm" ${reg(()=>{$('#phwho').value=e.name;document.querySelector('#tabs button[data-t=photos]').click();loadPhotos()})}>📷 ${e.photos} photo page(s) in their documents</button>`:''}${e.emailed&&e.emailed.length?`<button class="sm" ${reg(()=>{$('#emwho').value=e.name;document.querySelector('#tabs button[data-t=emails]').click();loadEmails()})}>✉ e-mails</button>`:''}<button class="sm" ${reg(()=>{$('#c3').value=e.name;document.querySelector('#tabs button[data-t=g3d]').click();draw3d()})}>3D bubbles here</button></div>
+  ${e.emailed&&e.emailed.length?`<details open><summary>E-mails exchanged with (${e.emailed.length})</summary><table><tr><th>who</th><th>e-mails</th><th>open</th></tr>${e.emailed.map(c=>`<tr><td>${tag({id:c.other_id,type:c.type,name:c.name})}</td><td>${c.weight}</td><td>${c.pages.slice(0,5).map(p=>`<span class="lnk" onclick="openPage(${p})">p</span>`).join(' ')}</td></tr>`).join('')}</table></details>`:''}
+  <details open><summary>Documents (${e.documents.length})</summary><table><tr><th>document</th><th>filed</th><th>mentions</th><th>first</th></tr>${docs}</table></details>
+  <details open><summary>Shares pages with (${e.connections.length})</summary><table><tr><th>who / what</th><th>pages shared</th><th>open</th></tr>${con}</table></details>
+  <details><summary>Dates on the same pages (${tl.dates.length})</summary>${dates}</details>
+  <details open><summary>Every mention, quoted (${e.mentions.length})</summary>${men}</details>`;window.scrollTo({top:0,behavior:'smooth'});}
+async function openDoc(id){document.querySelector('#tabs button[data-t=docs]').click();const d=await api('/api/doc/'+id);
+  $('#dlist').innerHTML=`<h3>${esc(d.docket?'Document '+d.docket:d.title)}</h3><div class="meta">${esc(d.title)} · ${esc(d.item_title)} · <a href="${esc(d.url)}" target="_blank" rel="noopener">source item</a> · <span class="lnk" onclick="loadDocs()">all documents</span></div>
+  <div>${d.pages.map(p=>`<span class="lnk" onclick="openPage(${p.id})" style="margin-right:8px">p.${p.pdf_page}</span>`).join('')}</div><div style="margin-top:8px">${d.entities.map(e=>tag(e)+`<span class="meta">×${e.n}</span> `).join('')}</div>`;}
+async function loadDocs(){const d=await api('/api/documents');$('#dlist').innerHTML=`<h3>${d.documents.length} documents</h3><table><tr><th>document</th><th>filed</th><th>PDF pages</th><th>entities</th></tr>`+d.documents.map(x=>`<tr><td><span class="lnk" onclick="openDoc(${x.id})">${esc(x.docket?'Document '+x.docket:x.title)}</span></td><td>${esc(x.filed||'')}</td><td>${x.first_page}–${x.last_page}</td><td>${x.entities}</td></tr>`).join('')+'</table>';}
+async function openPage(id){if(!id)return;pageData=await api('/api/page/'+id);curPage=id;$('#pageview').style.display='block';$('#pvtitle').textContent=`${pageData.bates?pageData.bates+' · ':''}page ${pageData.pdf_page} · Document ${pageData.docket||'—'} · ${pageData.case_no||''} · ${pageData.item}`;
+  $('#pvprev').onclick=()=>pageData.prev_id&&openPage(pageData.prev_id);$('#pvnext').onclick=()=>pageData.next_id&&openPage(pageData.next_id);$('#pvtags').innerHTML=pageData.mentions.filter((m,i,a)=>a.findIndex(x=>x.entity_id===m.entity_id)===i).map(m=>tag({id:m.entity_id,type:m.type,name:m.name})).join('');renderPage();}
+function renderPage(){const t=pageData.text;let out='',last=0;const ms=[...pageData.mentions].sort((a,b)=>a.start-b.start);for(const m of ms){if(m.start<last)continue;out+=esc(t.slice(last,m.start))+`<mark class="${m.type}" title="${esc(m.name)}">${esc(t.slice(m.start,m.end))}</mark>`;last=m.end}out+=esc(t.slice(last));$('#pvtext').innerHTML=out;$('#pvimgbox').innerHTML=$('#pvimg').checked?`<img class="pageimg" src="/page/${curPage}.png" alt="scan of PDF page ${pageData.pdf_page}">`:'';}
+function closePage(){$('#pageview').style.display='none'}
+async function pinPage(){await api('/api/notebook',{method:'POST',body:JSON.stringify({kind:'pin',title:`PDF page ${pageData.pdf_page} · Document ${pageData.docket}`,body:pageData.text.slice(0,1500),refs:[{page_id:curPage,pdf_page:pageData.pdf_page}]})});alert('pinned to the case notebook')}
+async function pinQuote(pid,pp,quote,name){await api('/api/notebook',{method:'POST',body:JSON.stringify({kind:'pin',title:`${name} · PDF page ${pp}`,body:quote,refs:[{page_id:pid,pdf_page:pp}]})});alert('quote pinned')}
+async function addNote(){await api('/api/notebook',{method:'POST',body:JSON.stringify({kind:$('#nkind').value,title:$('#ntitle').value,body:$('#nbody').value,refs:[]})});$('#ntitle').value='';$('#nbody').value='';loadNotes()}
+async function loadNotes(){const d=await api('/api/notebook');$('#nlist').innerHTML=d.entries.map(n=>{const refs=JSON.parse(n.refs||'[]');return `<div class="card"><h3>${esc(n.kind)} · ${esc(n.title)} <button class="sm" onclick="delNote(${n.id})">delete</button></h3><div class="meta">${esc(n.created)} ${refs.map(r=>`· <span class="lnk" onclick="openPage(${r.page_id})">PDF page ${r.pdf_page}</span>`).join('')}</div><div class="quote">${esc(n.body)}</div></div>`}).join('')||'<div class="meta">Nothing pinned yet.</div>'}
+async function delNote(id){if(confirm('Delete this notebook entry?')){await api('/api/notebook?id='+id,{method:'DELETE'});loadNotes()}}
+async function loadRedactions(){const d=await api('/api/redactions');$('#rlist').innerHTML=d.redactions.map(r=>`<div class="card"><h3><span class="tag REDACTION" onclick="openEntity(${r.id})">${esc(r.name)}</span> <span class="meta">${r.mentions} occurrence(s) in ${r.docs} document(s)</span></h3><div class="meta">documents: ${r.documents.map(x=>`<span class="lnk" onclick="openDoc(${x.id})">${esc(x.docket)}</span> ×${x.n}`).join(' · ')}</div><div>named context on the same pages: ${r.context.map(c=>tag(c)+`<span class="meta">×${c.weight}</span> `).join('')}</div></div>`).join('')}
+const COL={PERSON:'#5aa9e6',ORG:'#8fd18f',PLACE:'#e08a7a',REDACTION:'#c45bd3',EMAIL:'#79c7c0',PHONE:'#79c7c0',TAIL:'#79c7c0',DATE:'#c9c9c9',MONEY:'#d2b45a',CASE:'#79c7c0'};
+async function drawGraph(){gdrawn=true;const c=byName($('#gcenter').value);const u=`/api/graph?${c?'center='+c.id+'&':''}depth=${$('#gdepth').value}&min=${$('#gmin').value}&types=${encodeURIComponent($('#gtypes').value)}&limit=${$('#glimit').value}`;const d=await api(u);
+  const svg=d3.select('#gsvg');svg.selectAll('*').remove();const W=svg.node().clientWidth,Hh=svg.node().clientHeight;const g=svg.append('g');svg.call(d3.zoom().scaleExtent([.2,6]).on('zoom',e=>g.attr('transform',e.transform)));
+  const nodes=d.nodes.map(n=>({...n}));const idx=new Map(nodes.map(n=>[n.id,n]));const links=d.edges.filter(e=>idx.has(e.a)&&idx.has(e.b)).map(e=>({source:e.a,target:e.b,w:e.w}));
+  const r=n=>4+Math.min(26,Math.log2(1+(n.mentions||1))*2.6);const sim=d3.forceSimulation(nodes).force('link',d3.forceLink(links).id(n=>n.id).distance(l=>90+220/(1+l.w)).strength(l=>Math.min(.6,.05+l.w/60))).force('charge',d3.forceManyBody().strength(-380).distanceMax(900)).force('center',d3.forceCenter(W/2,Hh/2)).force('collide',d3.forceCollide(n=>r(n)+4));
+  const link=g.append('g').attr('stroke','#3a4152').selectAll('line').data(links).join('line').attr('stroke-width',l=>Math.min(8,.6+Math.log2(1+l.w)));link.append('title').text(l=>`${l.source.name||l.source} — ${l.target.name||l.target}: ${l.w} shared page(s)`);
+  const node=g.append('g').selectAll('g').data(nodes).join('g').style('cursor','pointer').call(d3.drag().on('start',(e,n)=>{if(!e.active)sim.alphaTarget(.3).restart();n.fx=n.x;n.fy=n.y}).on('drag',(e,n)=>{n.fx=e.x;n.fy=e.y}).on('end',(e,n)=>{if(!e.active)sim.alphaTarget(0);n.fx=null;n.fy=null}));
+  node.append('circle').attr('r',r).attr('fill',n=>COL[n.type]||'#999').attr('stroke',n=>c&&n.id===c.id?'#fff':'#0b0d12').attr('stroke-width',n=>c&&n.id===c.id?3:1);
+  node.append('text').text(n=>n.name).attr('x',n=>r(n)+3).attr('y',4).attr('font-size',11).attr('fill','#e6e8ee');node.append('title').text(n=>`${n.name} (${n.type}) · ${n.mentions} mentions in ${n.docs} documents`);
+  node.on('click',(e,n)=>sideNode(n)).on('dblclick',(e,n)=>{$('#gcenter').value=n.name;drawGraph()});
+  sim.on('tick',()=>{link.attr('x1',l=>l.source.x).attr('y1',l=>l.source.y).attr('x2',l=>l.target.x).attr('y2',l=>l.target.y);node.attr('transform',n=>`translate(${n.x},${n.y})`)});
+  $('#gside').style.display='block';$('#gside').innerHTML=`<div class="meta">${nodes.length} nodes, ${links.length} links${c?' around '+esc(c.name):' (overview: the most mentioned)'}. Click a node.</div>`;}
+async function sideNode(n){const e=await api('/api/entity/'+n.id+'?limit=8');$('#gside').innerHTML=`<h3>${esc(e.name)} <span class="tag ${e.type}">${e.type}</span> <button class="sm" onclick="openEntity(${e.id})">full record</button></h3><div class="meta">${e.documents.length} document(s)</div><div>${e.connections.slice(0,16).map(cn=>tag({id:cn.other_id,type:cn.type,name:cn.name})+`<span class="meta">×${cn.weight}</span> `).join('')}</div>${e.mentions.slice(0,3).map(m=>`<div class="quote" onclick="openPage(${m.page_id})" title="open the page">${esc(m.quote)}</div>`).join('')}`}
+const CATCOL={'politics / government':'#e4b03a','business / finance / technology':'#8fd18f','entertainment / arts':'#e08a7a','royalty':'#c45bd3','law':'#79c7c0','media':'#f0f0a0','science / academia':'#a0c4ff','sport':'#ffb86b'};const CATS=Object.keys(CATCOL);
+let R3={nodes:new Set(),links:new Set()};
+function colorOf(n){if(R3.nodes.size)return R3.nodes.has(n.id)?'#ffd86b':'#2a2f3a';return (n.category&&CATCOL[n.category])||COL[n.type]||'#999'}
+function shell(nodes,center){const hop1=nodes.filter(n=>n.hop===1),hop2=nodes.filter(n=>n.hop===2);const byCat={};hop1.forEach(n=>{(byCat[n.category||'other']=byCat[n.category||'other']||[]).push(n)});
+  const cats=Object.keys(byCat).sort((a,b)=>(CATS.indexOf(a)+1||99)-(CATS.indexOf(b)+1||99));let k=0,N=hop1.length;cats.forEach(cat=>{byCat[cat].sort((a,b)=>b.mentions-a.mentions).forEach(n=>{const t=(k/N)*Math.PI*2,phi=Math.acos(1-2*((k%7)+1)/8);const r=260;n.fx=r*Math.sin(phi)*Math.cos(t);n.fy=r*Math.cos(phi);n.fz=r*Math.sin(phi)*Math.sin(t);k++})});
+  hop2.forEach((n,i)=>{const t=(i/hop2.length)*Math.PI*2,phi=Math.acos(1-2*((i%9)+1)/10),r=540;n.fx=r*Math.sin(phi)*Math.cos(t);n.fy=r*Math.cos(phi);n.fz=r*Math.sin(phi)*Math.sin(t)});
+  const c=nodes.find(n=>n.id===center);if(c){c.fx=0;c.fy=0;c.fz=0}}
+async function draw3d(){g3drawn=true;clearRoute3d(false);const c=byName($('#c3').value);const u=`/api/graph?${c?'center='+c.id+'&':''}kind=${$('#k3').value}&depth=${$('#d3d').value}&min=${$('#m3').value}&types=${encodeURIComponent($('#t3').value)}&limit=${$('#l3').value}`;const d=await api(u);
+  const nodes=d.nodes.map(n=>({...n,val:1+Math.min(40,Math.log2(1+(n.mentions||1))*3)}));const ids=new Set(nodes.map(n=>n.id));const links=d.edges.filter(e=>ids.has(e.a)&&ids.has(e.b)).map(e=>({source:e.a,target:e.b,w:e.w}));
+  if(c)shell(nodes,c.id);const big=new Set(nodes.slice().sort((a,b)=>b.mentions-a.mentions).slice(0,40).map(n=>n.id));
+  const box=$('#g3dbox');if(!G3){G3=ForceGraph3D()(box).backgroundColor('#05070b').width(box.clientWidth).height(box.clientHeight).nodeId('id').nodeVal('val').nodeLabel(n=>`${n.name} · ${n.category||n.type} · ${n.mentions} mentions in ${n.docs} documents${n.description?' · '+n.description:''}`).nodeColor(n=>colorOf(n)).nodeOpacity(.92).nodeResolution(14)
+    .onEngineTick(()=>labels3d())
+    .linkWidth(l=>R3.links.size?(R3.links.has(lk(l))?5:.1):Math.min(4,.2+Math.log2(1+l.w)*.5)).linkOpacity(.22).linkColor(l=>R3.links.size?(R3.links.has(lk(l))?'#ffd86b':'#1c2029'):'#8a93a8').onNodeClick(n=>sideNode3(n)).onNodeRightClick(n=>{$('#c3').value=n.name;draw3d()}).d3VelocityDecay(.3);
+    G3.d3Force('charge').strength(-120);window.addEventListener('resize',()=>G3.width(box.clientWidth).height(box.clientHeight))}
+  nodes.forEach(n=>n._lab=big.has(n.id));G3.graphData({nodes,links});setTimeout(()=>G3.cameraPosition({x:0,y:120,z:c?900:1400},{x:0,y:0,z:0},1000),300);
+  $('#g3side').style.display='block';$('#g3side').innerHTML=`<div class="meta">${nodes.length} bubbles, ${links.length} lines (${d.kind==='emailed'?'e-mails exchanged':'pages shared'})${c?' around '+esc(c.name):' (overview: the most mentioned)'}. Click a bubble.</div>`;}
+const lk=l=>{const a=typeof l.source==='object'?l.source.id:l.source,b=typeof l.target==='object'?l.target.id:l.target;return Math.min(a,b)+'-'+Math.max(a,b)};
+function clearRoute3d(redraw=true){R3={nodes:new Set(),links:new Set()};$('#r3note').textContent='';if(redraw&&G3){G3.nodeColor(G3.nodeColor());G3.linkColor(G3.linkColor());G3.linkWidth(G3.linkWidth())}}
+let _labEls=new Map();
+function labels3d(){if(!G3)return;const box=$('#g3labels');const data=G3.graphData().nodes;const want=data.filter(n=>n._lab||R3.nodes.has(n.id));const seen=new Set();
+  for(const n of want){if(n.x===undefined)continue;const c=G3.graph2ScreenCoords(n.x,n.y,n.z);let el=_labEls.get(n.id);if(!el){el=document.createElement('span');el.style.cssText='position:absolute;font-size:11px;color:#e6e8ee;text-shadow:0 0 4px #000,0 0 2px #000;white-space:nowrap;transform:translate(-50%,-130%)';el.textContent=n.name;box.appendChild(el);_labEls.set(n.id,el)}
+    const dim=R3.nodes.size&&!R3.nodes.has(n.id);el.style.color=dim?'#3a4050':(R3.nodes.has(n.id)?'#ffd86b':'#e6e8ee');el.style.fontWeight=R3.nodes.has(n.id)?'700':'400';el.style.left=c.x+'px';el.style.top=(c.y-6)+'px';el.style.display=(c.x<0||c.y<0||c.x>box.clientWidth||c.y>box.clientHeight)?'none':'';seen.add(n.id)}
+  for(const [id,el] of _labEls){if(!seen.has(id)){el.remove();_labEls.delete(id)}}}
+async function route3d(){const a=byName($('#r3a').value),b=byName($('#r3b').value);if(!a||!b){$('#r3note').textContent='pick two names';return}const d=await api(`/api/path?a=${a.id}&b=${b.id}&max=5&kind=${$('#k3').value}`);if(!d.path||!d.path.length){$('#r3note').textContent=d.note||'no route';return}
+  const ids=[d.path[0].from.id,...d.path.map(h=>h.to.id)];R3={nodes:new Set(ids),links:new Set(d.path.map(h=>Math.min(h.from.id,h.to.id)+'-'+Math.max(h.from.id,h.to.id)))};
+  const have=new Set(G3.graphData().nodes.map(n=>n.id));const missing=ids.filter(i=>!have.has(i));
+  if(missing.length){const ex=await Promise.all(missing.map(i=>api('/api/entity/'+i+'?limit=1')));const g=G3.graphData();ex.forEach(e=>g.nodes.push({id:e.id,type:e.type,name:e.name,mentions:e.mentions.length||1,docs:e.documents.length,val:12,_lab:true,category:e.profile&&e.profile.category}));
+    d.path.forEach(h=>{if(!g.links.find(l=>lk(l)===Math.min(h.from.id,h.to.id)+'-'+Math.max(h.from.id,h.to.id)))g.links.push({source:h.from.id,target:h.to.id,w:h.shared_pages})});G3.graphData(g)}
+  G3.nodeColor(G3.nodeColor());G3.linkColor(G3.linkColor());G3.linkWidth(G3.linkWidth());
+  $('#r3note').innerHTML=d.path.map(h=>`${esc(h.from.name)} <b>→</b> ${esc(h.to.name)} <span class="meta">(${h.shared_pages})</span>`).join(' · ');
+  $('#g3side').innerHTML=`<h3>Route ${esc(a.name)} → ${esc(b.name)} (${d.path.length} hops, ${d.kind==='emailed'?'e-mails':'shared pages'})</h3>`+d.path.map(h=>`<div class="hit"><div>${tag(h.from)} → ${tag(h.to)} <span class="meta">${h.shared_pages}</span></div>${h.evidence.slice(0,2).map(ev=>`<div class="meta"><span class="lnk" onclick="openPage(${ev.page_id})">page ${ev.pdf_page}</span> · ${esc(ev.docket)}</div><div class="quote">${esc(ev.quote_a)}</div>`).join('')}</div>`).join('');}
+async function sideNode3(n){const e=await api('/api/entity/'+n.id+'?limit=6');$('#g3side').innerHTML=`<h3>${esc(e.name)} <span class="tag ${e.type}">${e.type}</span> <button class="sm" onclick="openEntity(${e.id})">full record</button> <button class="sm" ${reg(()=>{$('#c3').value=e.name;draw3d()})}>centre here</button></h3><div class="meta">${e.documents.length} document(s)</div><div>${e.connections.slice(0,18).map(cn=>tag({id:cn.other_id,type:cn.type,name:cn.name})+`<span class="meta">×${cn.weight}</span> `).join('')}</div>${e.mentions.slice(0,3).map(m=>`<div class="quote" onclick="openPage(${m.page_id})" title="open the page">${esc(m.quote)}</div>`).join('')}`}
+async function lookup(id,name){const box=$('#lk'+id);box.innerHTML='<span class="meta">looking up…</span>';const d=await api('/api/lookup?name='+encodeURIComponent(name));
+  box.innerHTML=d.found?`<div class="card" style="margin:6px 0"><div class="meta">Unverified: a Wikipedia article whose title matches this name. It may be a different person with the same name; the files are the evidence, not this box.</div><b>${esc(d.title)}</b> <span class="meta">${esc(d.description||'')}</span><div>${esc(d.extract||'')}</div><div><a href="${esc(d.url)}" target="_blank" rel="noopener">open on Wikipedia</a></div></div>`:`<div class="meta">No Wikipedia article with exactly this title. <a href="https://duckduckgo.com/?q=${encodeURIComponent('"'+name+'" Epstein')}" target="_blank" rel="noopener">search the web</a> (opens in a new tab; nothing is stored).</div>`}
+async function loadBulbs(){const d=await api('/api/insights');const see=b=>b.b?`<span class="lnk" ${reg(()=>{$('#r3a').value=b.a.name;$('#r3b').value=b.b.name;$('#c3').value=b.a.name;document.querySelector('#tabs button[data-t=g3d]').click();draw3d().then(()=>setTimeout(route3d,1500))})}>route in 3D</span> · <span class="lnk" ${reg(()=>{$('#pa').value=b.a.name;$('#pb').value=b.b.name;document.querySelector('#tabs button[data-t=path]').click();findPath()})}>quotes</span>`:b.q?`<span class="lnk" ${reg(()=>{$('#q').value='"'+b.a.name+'" AND ('+b.q+')';document.querySelector('#tabs button[data-t=search]').click();doSearch()})}>the pages</span>`:`<span class="lnk" onclick="openEntity(${b.a.id})">record</span>`;
+  $('#bulbs').innerHTML=`<h3>💡 Light bulbs <span class="meta">${d.bulbs.length} connections no single page shows</span></h3><div class="meta">${esc(d.note)}</div>`+d.bulbs.slice(0,40).map(b=>`<div class="bulb"><div class="ico">💡</div><div><div class="k">${esc(b.kind)}</div><div>${esc(b.why)}</div><div>${tag(b.a)}${b.b?' '+tag(b.b):''}${b.via?' <span class="meta">via</span> '+b.via.map(v=>tag({id:v.id,type:v.type||'PERSON',name:v.name})).join(''):''}</div></div><div class="meta">${see(b)}</div></div>`).join('');}
+async function loadDash(){loadBulbs();const d=await api('/api/dashboard');const go3d=(a,b)=>{$('#r3a').value=a;$('#r3b').value=b;$('#c3').value=a;document.querySelector('#tabs button[data-t=g3d]').click();draw3d().then(()=>setTimeout(route3d,1500))};const goPath=(a,b)=>{$('#pa').value=a;$('#pb').value=b;document.querySelector('#tabs button[data-t=path]').click();findPath()};
+  const pair=(x)=>`<tr><td>${tag({id:x.a_id,type:'PERSON',name:x.a_name})} <span class="meta">↔</span> ${tag({id:x.b_id,type:'PERSON',name:x.b_name})}</td><td>${x.weight}</td><td><span class="lnk" ${reg(()=>go3d(x.a_name,x.b_name))}>3D</span> · <span class="lnk" ${reg(()=>goPath(x.a_name,x.b_name))}>quotes</span></td></tr>`;
+  const cats=Object.keys(d.figures).sort((a,b)=>(CATS.indexOf(a)+1||99)-(CATS.indexOf(b)+1||99));
+  $('#dashbody').innerHTML=`
+  <div class="cols">
+    <div class="card"><h3>Leads — the themes of the investigation</h3><div class="meta">pages that use the words; open one to read the quotes and see who is on each page</div><table><tr><th>lead</th><th>pages</th><th></th></tr>${d.themes.map(t=>`<tr><td>${esc(t.theme)}</td><td>${t.pages}</td><td><span class="lnk" ${reg(()=>{$('#q').value=t.q;document.querySelector('#tabs button[data-t=search]').click();doSearch()})}>open</span></td></tr>`).join('')}</table></div>
+    <div class="card"><h3>Strongest connections (people who share the most pages)</h3><table><tr><th>pair</th><th>pages</th><th>see</th></tr>${d.pairs.slice(0,18).map(pair).join('')}</table></div>
+    <div class="card"><h3>E-mail traffic (headers found in the files)</h3><div class="meta">Jeffrey Epstein's correspondents, by e-mails exchanged</div><div>${d.correspondents.map(c=>tag({id:c.id,type:c.type,name:c.name})+`<span class="meta">×${c.weight}</span> `).join('')}</div><h3 style="margin-top:10px">Most exchanged pairs</h3><table>${d.emailed.slice(0,12).map(pair).join('')}</table><div class="row"><button class="sm" onclick="document.querySelector('#tabs button[data-t=emails]').click()">all e-mails</button><button class="sm" onclick="$('#k3').value='emailed';$('#c3').value='Jeffrey Epstein';document.querySelector('#tabs button[data-t=g3d]').click();draw3d()">e-mail network in 3D</button></div></div>
+    <div class="card"><h3>Public figures named in the files</h3><div class="meta">exact Wikipedia title matches, ranked by pages shared with Jeffrey Epstein; a same-name person is possible, the files are the evidence</div>${cats.map(c=>`<div style="margin:6px 0"><span class="tag" style="border-color:${CATCOL[c]||'#555'}">${esc(c)}</span> ${d.figures[c].map(f=>`<span class="lnk" onclick="openEntity(${f.id})" title="${esc(f.description||'')}">${esc(f.name)}</span><span class="meta"> ${f.shared}</span>`).join(' · ')}</div>`).join('')}<div class="row"><button class="sm" onclick="document.querySelector('#tabs button[data-t=figures]').click()">the full list</button></div></div>
+    <div class="card" style="border-color:var(--r)"><h3>Persons of interest in the charging papers</h3><div class="meta">people, other than Epstein and Maxwell and other than public figures, most mentioned on pages that speak of co-conspirators, accomplices, recruiters, assistants or procuring (page counts / documents) — read the pages: a name on such a page may be a witness, a victim's pseudonym, a lawyer or an agent as well as a participant</div><div>${(d.participants||[]).map(u=>tag({id:u.id,type:'PERSON',name:u.name})+`<span class="meta">${u.n}/${u.docs}</span> `).join('')}</div><div class="row"><button class="sm" ${reg(()=>{$('#q').value=d.themes[d.themes.length-1].q;document.querySelector('#tabs button[data-t=search]').click();doSearch()})}>open the pages</button></div></div>
+    <div class="card"><h3>Heavy hitters without a public profile</h3><div class="meta">people the files mention most beside Epstein who match no Wikipedia title: staff, lawyers, agents, associates, or OCR variants of a known name — the first place to dig</div><div>${d.unknown.map(u=>tag({id:u.id,type:'PERSON',name:u.name})+`<span class="meta">${u.shared}/${u.mentions}</span> `).join('')}</div><div class="meta">shared pages with Epstein / mentions</div></div>
+    <div class="card"><h3>Redaction hot spots</h3><div class="meta">labels with the most occurrences and the documents they cluster in; identities are never inferred</div>${d.redactions.map(r=>`<div><span class="tag REDACTION" onclick="openEntity(${r.id})">${esc(r.name)}</span> <span class="meta">${r.mentions} in ${r.docs} docs · ${r.documents.slice(0,4).map(x=>`<span class="lnk" onclick="openDoc(${x.id})">${esc(x.docket)}</span>`).join(', ')}</span></div>`).join('')}</div>
+    ${d.money?`<div class="card" style="border-color:#d2b45a"><h3>Follow the money</h3><div class="meta">${d.money.total.n} amounts with a money word (${usd(d.money.total.s)}); flags: ${Object.entries(d.money.flags).map(([k,v])=>k+' '+v).join(' · ')}</div><table><tr><th>payer → payee</th><th>times</th><th>sum</th></tr>${d.money.pairs.map(x=>`<tr><td>${tag({id:x.a_id,type:'PERSON',name:x.a_name})} → ${tag({id:x.b_id,type:'PERSON',name:x.b_name})}</td><td>${x.n}</td><td>${usd(x.s)}</td></tr>`).join('')}</table><div class="meta" style="margin-top:6px">banks: ${d.money.banks.map(b=>esc(b.name)+' '+b.n).join(' · ')}</div><div class="row"><button class="sm" onclick="document.querySelector('#tabs button[data-t=money]').click()">the money tab</button></div></div>`:''}
+    <div class="card"><h3>Places and aircraft around Epstein</h3><div>${d.places.map(x=>tag({id:x.id,type:'PLACE',name:x.name})+`<span class="meta">×${x.weight}</span> `).join('')}</div><div style="margin-top:6px">${d.tails.map(x=>tag({id:x.id,type:'TAIL',name:x.name})+`<span class="meta">×${x.mentions}</span> `).join('')}</div></div>
+    <div class="card"><h3>Case notebook</h3>${d.notebook.length?d.notebook.map(n=>`<div class="hit"><b>${esc(n.kind)}</b> · ${esc(n.title)} <span class="meta">${esc(n.created)}</span><div class="meta">${esc(n.body)}</div></div>`).join(''):'<div class="meta">nothing pinned yet: pin pages and quotes, write leads and open questions</div>'}<div class="row"><button class="sm" onclick="document.querySelector('#tabs button[data-t=notebook]').click()">open the notebook</button></div></div>
+    <div class="card"><h3>Corpus</h3><table><tr><th>source</th><th>pages</th><th>ingested</th></tr>${d.items.map(i=>`<tr><td class="meta">${esc(i.title)}</td><td>${i.pages}</td><td class="meta">${esc(i.ingested).slice(0,10)}</td></tr>`).join('')}</table></div>
+  </div>`;}
+let GB=null;
+const KCOL={country:'#d9a441',city:'#5aa9e6',state:'#8fd18f',region:'#9aa3b2',airport:'#e08a7a'};
+async function drawGlobe(){const f=byName($('#gbfocus').value);const lead=$('#gblead').value;if($('#gblead').options.length<=1){const t=await api('/api/themes');t.themes.forEach(x=>{const o=document.createElement('option');o.value=x.theme;o.textContent=x.theme+' ('+x.pages+')';$('#gblead').appendChild(o)})}
+  const d=await api(`/api/globe?${f?'focus='+f.id+'&':''}${lead?'lead='+encodeURIComponent(lead)+'&':''}kind=${$('#gbkind').value}&min=${$('#gbmin').value}&photos=${$('#gbphotos').checked?1:0}`);
+  const box=$('#globebox');const byId=new Map(d.points.map(p=>[p.id,p]));const maxn=Math.max(1,...d.points.map(p=>p.n));
+  const arcs=d.arcs.slice(0,+$('#gbarcs').value).map(a=>{const A=byId.get(a.a),B=byId.get(a.b);return {startLat:A.lat,startLng:A.lon,endLat:B.lat,endLng:B.lon,w:a.w,a:A,b:B,pages:a.pages}});
+  const photoPts=[];const seen={};for(const ph of d.photos){const P=byId.get(ph.entity_id);if(!P)continue;const k=ph.entity_id;seen[k]=(seen[k]||0)+1;if(seen[k]>6)continue;const ang=seen[k]*1.05,r=1.6;photoPts.push({lat:P.lat+r*Math.sin(ang),lng:P.lon+r*Math.cos(ang),page_id:ph.page_id,pdf_page:ph.pdf_page,bates:ph.bates,place:P.name})}
+  if(!GB){GB=Globe()(box).width(box.clientWidth).height(box.clientHeight).globeImageUrl('img/earth-dark.jpg').bumpImageUrl('img/earth-topology.png').backgroundImageUrl('img/night-sky.png').showAtmosphere(true).atmosphereColor('#4a6fa5').atmosphereAltitude(.18)
+    .pointLat('lat').pointLng('lon').pointColor(p=>p.photo?'#ffffff':(KCOL[p.kind]||'#999')).pointAltitude(p=>p.photo?.012:.01+.25*Math.sqrt(p.n/maxn)).pointRadius(p=>p.photo?.22:.25+.9*Math.sqrt(p.n/maxn)).pointResolution(10).pointLabel(p=>p.photo?`📷 picture page ${p.pdf_page} (${p.bates||''}) near ${p.place}`:`${p.name} · ${p.kind} · ${p.n} page(s)`)
+    .onPointClick(p=>p.photo?openPage(p.page_id):globeSide(p))
+    .arcStartLat('startLat').arcStartLng('startLng').arcEndLat('endLat').arcEndLng('endLng').arcColor(()=>['rgba(255,216,107,.9)','rgba(255,140,66,.5)']).arcAltitudeAutoScale(.35).arcStroke(a=>Math.min(1.6,.15+Math.log2(1+a.w)*.25)).arcDashLength(.45).arcDashGap(.25).arcDashAnimateTime(2500).arcLabel(a=>`${a.a.name} ↔ ${a.b.name} · ${a.w} shared page(s)`).onArcClick(a=>arcSide(a))
+    .labelLat('lat').labelLng('lon').labelText('name').labelSize(p=>.6+.9*Math.sqrt(p.n/maxn)).labelColor(()=>'rgba(230,232,238,.85)').labelDotRadius(0).labelAltitude(.012).labelResolution(2);
+    window.addEventListener('resize',()=>GB.width(box.clientWidth).height(box.clientHeight));GB.pointOfView({lat:30,lng:-40,altitude:2.1},0)}
+  const pts=d.points.map(p=>({...p}));GB.pointsData(pts.concat(photoPts.map(p=>({...p,photo:true})))).arcsData(arcs).labelsData(pts.slice(0,45));GB.controls().autoRotate=$('#gbrot').checked;GB.controls().autoRotateSpeed=.35;
+  $('#gbside').style.display='block';$('#gbside').innerHTML=`<div class="meta">${d.points.length} located things, ${arcs.length} arcs, ${photoPts.length} photo dots · page set: ${esc(d.note)}. Click a dot or an arc.</div>`;}
+$('#gbrot').addEventListener('change',()=>{if(GB)GB.controls().autoRotate=$('#gbrot').checked});
+async function globeSide(p){const f=byName($('#gbfocus').value);const lead=$('#gblead').value;const d=await api(`/api/globe/point?id=${p.id}${f?'&focus='+f.id:''}${lead?'&lead='+encodeURIComponent(lead):''}`);
+  $('#gbside').innerHTML=`<h3>${esc(d.place.name)} <span class="tag" style="border-color:${KCOL[d.place.kind]||'#555'}">${esc(d.place.kind)} · ${esc(d.place.country||'')}</span> <button class="sm" onclick="openEntity(${d.place.id})">full record</button> <button class="sm" ${reg(()=>{$('#gbfocus').value='';$('#gbkind').value='all';})}>…</button></h3>
+  <div><b class="meta">People on these pages:</b> ${d.people.map(x=>tag({id:x.id,type:'PERSON',name:x.name})+`<span class="meta">×${x.n}</span> `).join('')}</div>
+  ${d.photos.length?`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;margin:8px 0">${d.photos.map(ph=>`<div style="cursor:pointer" onclick="openPage(${ph.page_id})"><img src="/thumb/${ph.page_id}.png" loading="lazy" style="width:100%;border:1px solid var(--line);border-radius:5px;background:#fff" alt=""><div class="meta">${esc(ph.bates||'')} p.${ph.pdf_page}</div></div>`).join('')}</div>`:''}
+  ${d.pages.map(pg=>`<div class="hit"><div class="meta"><span class="lnk" onclick="openPage(${pg.page_id})">page ${pg.pdf_page}</span> · ${esc(pg.bates||pg.docket)}</div><div class="quote">${esc(pg.quote)}</div></div>`).join('')}`;}
+async function loadFlights(){const d=await api('/api/flights');$('#flights').innerHTML=`<div class="meta">${d.legs.length} pages · ${esc(d.note)}</div><table><tr><th>years</th><th>airports</th><th>people named on the page</th><th>page</th></tr>`+d.legs.map(l=>`<tr><td class="meta">${l.years.join(', ')}</td><td>${l.airports.map(esc).join(' · ')}</td><td class="meta">${l.people.slice(0,8).map(esc).join(', ')}</td><td><span class="lnk" onclick="openPage(${l.page_id})">${esc(l.bates)} p.${l.pdf_page}</span></td></tr>`).join('')+'</table>'}
+function arcSide(a){$('#gbside').innerHTML=`<h3>${esc(a.a.name)} ↔ ${esc(a.b.name)} <span class="meta">${a.w} shared page(s)</span></h3><div>${a.pages.map(p=>`<span class="lnk" onclick="openPage(${p})" style="margin-right:10px">open page</span>`).join('')}</div><div class="meta">${a.a.kind==='airport'&&a.b.kind==='airport'?'Two airports on one page: a flight leg in a log, or two airports named in one document.':'Two places named on the same page.'}</div>`}
+async function loadTimeline(){const f=byName($('#tlfocus').value);const lead=$('#tllead').value;if($('#tllead').options.length<=1){const t=await api('/api/themes');t.themes.forEach(x=>{const o=document.createElement('option');o.value=x.theme;o.textContent=x.theme;$('#tllead').appendChild(o)})}
+  const d=await api(`/api/timeline2?${f?'focus='+f.id+'&':''}${lead?'lead='+encodeURIComponent(lead):''}`);$('#tlnote').textContent=d.note+(f?' · the pages of '+f.name:'')+(lead?' · lead: '+lead:'');const ys=$('#tlall').checked?d.years:d.years.filter(y=>y.year>=1990);const max=Math.max(1,...ys.map(y=>y.n));
+  $('#tlbars').innerHTML=ys.map(y=>`<div title="${y.year}: ${y.n} dated mentions" style="flex:0 0 26px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;cursor:pointer" ${reg(()=>showYear(y))}><div style="width:20px;background:${y.year>=2002&&y.year<=2008?'#e08a7a':y.year>=2015&&y.year<=2021?'#d9a441':'#5aa9e6'};height:${Math.max(2,Math.round(180*y.n/max))}px;border-radius:3px 3px 0 0"></div><div class="meta" style="font-size:10px;margin-top:3px;transform:rotate(-60deg);transform-origin:top left;white-space:nowrap">${y.year}</div></div>`).join('');}
+function showYear(y){$('#tlyear').style.display='block';$('#tlyear').innerHTML=`<h3>${y.year} <span class="meta">${y.n} dated mentions</span></h3><div>${y.samples.map(s=>`<span class="tag DATE" onclick="openPage(${s.page_id})">${esc(s.date)}</span>`).join('')}</div><div class="row"><button class="sm" ${reg(()=>{$('#q').value='"'+y.year+'"'+($('#tlfocus').value?' AND "'+$('#tlfocus').value+'"':'');document.querySelector('#tabs button[data-t=search]').click();doSearch()})}>search this year's pages</button></div>`}
+const usd=v=>'$'+Math.round(v).toLocaleString('en-US');
+async function loadMoney(){const [s,d]=await Promise.all([api('/api/money/summary'),api(`/api/money?who=${encodeURIComponent($('#mywho').value)}&min=${$('#mymin').value||0}&max=${$('#mymax').value||0}&flag=${$('#myflag').value}&verb=${$('#myverb').value}&sort=${$('#mysort').value}&rel=${$('#myrel').value}&press=${$('#mypress').checked?1:0}&limit=300`)]);
+  $('#mynote').textContent=s.note;
+  $('#mysum').innerHTML=`<h3>${s.total.n} amounts with a money word · ${usd(s.total.s)} in all</h3><div class="meta">flags: ${Object.entries(s.flags).map(([k,v])=>`<span class="lnk" ${reg(()=>{$('#myflag').value=k;loadMoney()})}>${k} ${v}</span>`).join(' · ')}</div>
+  <h3 style="margin-top:10px">Who paid whom (sentences that name both)</h3><table><tr><th>payer → payee</th><th>times</th><th>sum</th><th></th></tr>${s.pairs.slice(0,25).map(x=>`<tr><td>${tag({id:x.a_id,type:'PERSON',name:x.a_name})} → ${tag({id:x.b_id,type:'PERSON',name:x.b_name})}</td><td>${x.n}</td><td>${usd(x.s)}</td><td><span class="lnk" ${reg(()=>{$('#mywho').value=x.a_name;loadMoney()})}>rows</span></td></tr>`).join('')}</table>
+  <h3 style="margin-top:10px">Banks on the pages</h3><div>${s.banks.map(b=>`<span class="lnk" ${reg(()=>{$('#mywho').value=b.name;loadMoney()})}>${esc(b.name)}</span><span class="meta"> ${b.n} pages / ${b.docs} docs</span>`).join(' · ')}</div>
+  <h3 style="margin-top:10px">Just under $10,000</h3>${s.structuring.slice(0,12).map(r=>`<div class="hit"><div class="meta"><b>${usd(r.amount)}</b> · ${esc(r.verb)} · ${esc(r.payer_raw||'?')} → ${esc(r.payee_raw||'?')} · <span class="lnk" onclick="openPage(${r.page_id})">${esc(r.bates||'page')} p.${r.pdf_page}</span></div><div class="quote">${esc(r.quote)}</div></div>`).join('')||'<div class="meta">none</div>'}
+  <h3 style="margin-top:10px">Jurisdictions on money pages</h3><div>${s.jurisdictions.map(j=>`<span class="tag" style="border-color:${j.secrecy?'#c45bd3':'var(--line)'}" title="${j.secrecy?'a secrecy or offshore jurisdiction':''}">${esc(j.name)} <span class="meta">${j.pages} pages</span></span>`).join(' ')}</div><div class="meta">purple = secrecy / offshore jurisdictions (Virgin Islands, Cayman, Switzerland, Luxembourg, Monaco, Belize, Panama, UAE …)</div>
+  <h3 style="margin-top:10px">Statements and ledgers (pages of dated amounts)</h3>${s.statements.slice(0,12).map(x=>`<div><span class="lnk" onclick="openDoc(${x.doc_id})">${esc(x.docket||x.title)}</span> <span class="meta">${x.n} lines · ${usd(x.s)}</span> <span class="lnk" onclick="openPage(${x.page_id})">first page</span></div>`).join('')||'<div class="meta">none</div>'}
+  <h3 style="margin-top:10px">The same amount again and again</h3>${s.repeated.slice(0,12).map(x=>`<div><b>${usd(x.amount)}</b> <span class="meta">×${x.n} in ${x.docs} doc(s) · ${esc(x.payee_raw||'')}</span> <span class="lnk" onclick="openPage(${x.page_id})">page</span></div>`).join('')||'<div class="meta">none</div>'}
+  <h3 style="margin-top:10px">By kind</h3><div class="meta">${s.verbs.map(v=>`<span class="lnk" ${reg(()=>{$('#myverb').value=v.verb;loadMoney()})}>${esc(v.verb)}</span> ${v.n} (${usd(v.s)})`).join(' · ')}</div>`;
+  $('#mylist').innerHTML=`<h3>${d.payments.length} shown · ${d.relevant} on Epstein-circle pages · ${d.total} in all</h3>`+d.payments.map(r=>`<div class="hit"><div><b>${usd(r.amount)}</b> <span class="meta">${esc(r.verb)}</span> ${r.payer?tag({id:r.payer_id,type:'PERSON',name:r.payer}):'<span class="meta">'+esc(r.payer_raw||'?')+'</span>'} <span class="meta">→</span> ${r.payee?tag({id:r.payee_id,type:'PERSON',name:r.payee}):'<span class="meta">'+esc(r.payee_raw||'?')+'</span>'} ${(r.flags||'').split(',').filter(Boolean).map(f=>`<span class="tag" style="border-color:#d2b45a">${esc(f)}</span>`).join('')}</div><div class="meta"><span class="lnk" onclick="openPage(${r.page_id})">${esc(r.bates||r.docket)} p.${r.pdf_page}</span> · ${esc(r.item)}</div><div class="quote">${esc(r.quote)}</div></div>`).join('');}
+$('#mywho').addEventListener('keydown',e=>{if(e.key==='Enter')loadMoney()});
+async function loadEmails(){const d=await api(`/api/emails?q=${encodeURIComponent($('#emq').value)}&who=${encodeURIComponent($('#emwho').value)}&limit=300`);
+  $('#emlist').innerHTML=`<h3>${d.emails.length} shown of ${d.total} e-mail headers</h3><table><tr><th>date</th><th>from</th><th>to / cc</th><th>subject</th><th>page</th></tr>`+d.emails.map(e=>`<tr><td class="meta">${esc(e.date_raw)}</td><td>${e.from_id?`<span class="lnk" onclick="openEntity(${e.from_id})">${esc(e.from_name)}</span>`:esc(e.from_raw.slice(0,40))}</td><td>${e.to_names.length?e.to_names.map(n=>esc(n)).join(', '):esc((e.to_raw+' '+e.cc_raw).slice(0,60))}</td><td>${esc(e.subject)}</td><td><span class="lnk" onclick="openPage(${e.page_id})">${esc(e.docket)}</span></td></tr>`).join('')+'</table>';
+  $('#emsenders').innerHTML='<h3>Most frequent senders</h3>'+d.senders.map(s=>`<div>${tag({id:s.id,type:'PERSON',name:s.name})}<span class="meta">×${s.n}</span></div>`).join('');}
+$('#emq').addEventListener('keydown',e=>{if(e.key==='Enter')loadEmails()});$('#emwho').addEventListener('keydown',e=>{if(e.key==='Enter')loadEmails()});
+let phOffset=0;async function loadPhotos(offset=0){phOffset=offset;const who=byName($('#phwho').value);const d=await api(`/api/photos?${who?'entity='+who.id+'&':''}limit=120&offset=${offset}`);$('#phnote').textContent=`${d.total} photo pages in all${who?' · showing those in documents mentioning '+who.name:''}${d.note?' · '+d.note:''}`;
+  $('#phgrid').innerHTML=d.pages.map(p=>`<div style="cursor:pointer" onclick="openPage(${p.id})"><img src="/thumb/${p.id}.png" loading="lazy" style="width:100%;border:1px solid var(--line);border-radius:6px;background:#fff" alt=""><div class="meta">${esc(p.bates||p.docket)} p.${p.pdf_page}</div></div>`).join('')||'<div class="meta">none</div>';}
+async function loadFigures(){const d=await api('/api/figures?category='+encodeURIComponent($('#fcat').value));$('#fnote').textContent=d.note;if($('#fcat').options.length<=1)d.categories.forEach(c=>{const o=document.createElement('option');o.value=c.category;o.textContent=`${c.category} (${c.n})`;$('#fcat').appendChild(o)});
+  $('#flist').innerHTML=`<h3>${d.figures.length} public figures named in the files, ranked by pages shared with ${esc(d.focus)}</h3><table><tr><th>name</th><th>category</th><th>who (Wikipedia)</th><th>pages shared with Epstein</th><th>mentions</th><th>documents</th></tr>`+d.figures.map(f=>`<tr><td><span class="lnk" onclick="openEntity(${f.id})">${esc(f.name)}</span></td><td><span class="tag" style="border-color:${CATCOL[f.category]||'#555'}">${esc(f.category)}</span></td><td class="meta">${esc(f.description||'')} <a href="${esc(f.url)}" target="_blank" rel="noopener">↗</a></td><td>${f.shared}</td><td>${f.mentions}</td><td>${f.docs}</td></tr>`).join('')+'</table>';}
+async function loadLeads(){const d=await api('/api/themes');$('#ldlist').innerHTML=`<div class="meta">${esc(d.note)}</div>`+d.themes.map(t=>`<div class="card"><h3>${esc(t.theme)} <span class="meta">${t.pages} page(s)</span> <button class="sm" ${reg(()=>{$('#q').value=t.q;document.querySelector('#tabs button[data-t=search]').click();doSearch()})}>open the lead</button></h3><div class="meta"><code>${esc(t.q)}</code></div></div>`).join('');}
+async function findPath(){const a=byName($('#pa').value),b=byName($('#pb').value);if(!a||!b){$('#pres').innerHTML='<div class="card">Pick two names from the list.</div>';return}const d=await api(`/api/path?a=${a.id}&b=${b.id}&max=${$('#pmax').value}`);
+  if(!d.path||!d.path.length){$('#pres').innerHTML=`<div class="card">${esc(d.note||d.error||'no chain')}</div>`;return}
+  $('#pres').innerHTML=`<div class="card"><h3>${esc(a.name)} → ${esc(b.name)}: ${d.path.length} hop(s)</h3>`+d.path.map(h=>`<div class="hit"><div>${tag(h.from)} → ${tag(h.to)} <span class="meta">${h.shared_pages} shared page(s)</span></div>${h.evidence.map(ev=>`<div class="meta"><span class="lnk" onclick="openPage(${ev.page_id})">PDF page ${ev.pdf_page}</span> · Document ${esc(ev.docket)}</div><div class="quote">${esc(ev.quote_a)}</div>${ev.quote_b&&ev.quote_b!==ev.quote_a?`<div class="quote">${esc(ev.quote_b)}</div>`:''}`).join('')}</div>`).join('')+'</div>';}
+async function route(){const h=decodeURIComponent(location.hash.slice(1));if(!h)return;const [tab,arg]=[h.split(':')[0],h.slice(h.indexOf(':')+1)];const b=document.querySelector(`#tabs button[data-t=${tab}]`);if(!b)return;
+  if(tab==='graph'&&arg){$('#gcenter').value=arg;gdrawn=true}if(tab==='g3d'&&arg){$('#c3').value=arg.includes('|')?arg.split('|')[0]:arg;g3drawn=true}if(tab==='globe'){GB=GB||'pending'}b.click();if(tab==='globe'&&GB==='pending')GB=null;
+  if(tab==='graph'&&arg){drawGraph()}else if(tab==='g3d'&&arg&&arg.includes('|')){const [a,b2]=arg.split('|');$('#r3a').value=a;$('#r3b').value=b2;draw3d().then(()=>setTimeout(route3d,2500))}else if(tab==='g3d'&&arg){draw3d()}else if(tab==='globe'){if(arg)$('#gbfocus').value=arg;drawGlobe()}else if(tab==='search'&&arg){$('#q').value=arg;doSearch()}else if(tab==='people'&&arg){const e=byName(arg);if(e)openEntity(e.id)}else if(tab==='path'&&arg.includes('|')){const [a,b2]=arg.split('|');$('#pa').value=a;$('#pb').value=b2;findPath()}}
+window.addEventListener('hashchange',route);
+stats().then(()=>{route();if(!location.hash)loadDash()});
+</script>
+</body>
+</html>

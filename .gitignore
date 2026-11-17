@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.bak*
+data/
+cache/
+*.db
+*.db-wal
+*.db-shm
+shot-*.png
+.venv/

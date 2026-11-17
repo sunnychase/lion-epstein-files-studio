@@ -1,0 +1,18 @@
+[Unit]
+Description=Lion Epstein Files Studio (public-record document graph; stdlib server, SQLite)
+After=network-online.target
+
+[Service]
+WorkingDirectory=%h/efiles
+Environment=EFILES_HOST=0.0.0.0
+Environment=EFILES_PORT=8670
+Environment=EFILES_DB=%h/efiles/efiles.db
+Environment=EFILES_DATA=%h/efiles/data
+Environment=EFILES_CACHE=%h/efiles/cache
+ExecStart=%h/efiles/.venv/bin/python3 %h/efiles/server.py
+Restart=on-failure
+RestartSec=3
+MemoryMax=2G
+
+[Install]
+WantedBy=default.target
