@@ -52,3 +52,12 @@ The releases carry each image set as numbered zip parts of compressed pages (130
 release scans, every line legible). `./fetch_images.sh <set> data/<item>` downloads, verifies and unpacks a set;
 `tools/backfill_images.py` then points each page at its image by Bates number. `tools/compress_images.py` makes the packs
 (from a folder of originals, or streamed straight from archive.org so no original touches the disk). Full-resolution originals: archive.org.
+
+## The server in Rust
+`rust/` holds the same server as one static binary (axum + bundled SQLite with FTS5; the front end is embedded at build time):
+```
+cd rust && cargo build --release          # Rust 1.80+; a C compiler for the bundled SQLite
+EFILES_ROOT=.. EFILES_HOST=0.0.0.0 ./target/release/efiles-server
+```
+Every endpoint answers with the same JSON as `server.py`, so `static/` is shared; `systemd/efiles-web.service` runs the binary.
+`server.py` stays as the reference implementation and the fallback. The ingest pipeline (`ingest.py` and friends) remains Python: it leans on spaCy.
