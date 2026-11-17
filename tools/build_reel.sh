@@ -18,7 +18,7 @@ drawtext=fontfile=$B:text='$cap':fontcolor=0xf2f3f6:fontsize=44:x=88:y=$((H-122)
 drawtext=fontfile=$R:text='The Epstein Files - Lion Studios':fontcolor=0xd9a441:fontsize=26:x=88:y=$((H-60)),\
 drawtext=fontfile=$R:text='© Sunny Chase - Lion Studios':fontcolor=0xffffff@0.55:fontsize=22:x=w-tw-40:y=$((H-50))" -an -c:v libx264 -preset fast -crf 18 -pix_fmt yuv420p seg/$1.mp4; }
 card 00-title 4 "THE EPSTEIN FILES" "Lion Studios" "A detective desk over the public court and government records. Every link backed by a quoted page."
-scene 01 01-dashboard.webm 4 10 "A dashboard over 400,000 pages: light bulbs, leads, strongest connections"
+scene 01 01-dashboard.webm 4 10 "A dashboard over half a million pages: patterns, leads, strongest connections"
 scene 02 02-timeline.webm 5.5 6 "The whole record by year, down to the pages behind any bar"
 scene 03 03-bubbles.webm 6 9 "3D bubbles: who shares pages with whom, routes pinpointed in gold"
 scene 04 04-globe.webm 9 11 "A real Earth: places, flight legs and photo pages on the globe"
