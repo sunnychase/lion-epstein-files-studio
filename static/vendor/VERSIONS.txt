@@ -1,1 +1,1 @@
-d3 7.9.0 (ISC) · 3d-force-graph 1.77.0 (MIT, bundles three.js) · globe.gl 2.43.0 (MIT) — fetched from unpkg; textures in ../img from the three-globe examples (MIT).
+d3 7.9.0 (ISC) · 3d-force-graph 1.77.0 (MIT, bundles three.js) — from unpkg · CesiumJS 1.146.0 (Apache-2.0, cesium/ from the npm registry; no Cesium ion). Imagery at run time: NASA GIBS Blue Marble, EOX Sentinel-2 cloudless (CC BY-NC-SA 4.0), AWS terrain tiles.
