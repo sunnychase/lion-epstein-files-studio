@@ -6,7 +6,7 @@
 const EOX_YEAR = 2025;
 const EOX_URL = `https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-${EOX_YEAR}/default/WGS84/{z}/{y}/{x}.jpg`;
 const TERRARIUM = 'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png';
-const GIBS_WMTS = 'https://gibs.earthdata.nasa.gov/wmts/epsg4326/best';
+const GIBS_WMTS_3857 = 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best';
 const CREDITS = {
   gibs: 'Imagery: NASA GIBS / EOSDIS (Blue Marble)',
   eox: `EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data ${EOX_YEAR})`,
@@ -14,6 +14,19 @@ const CREDITS = {
 };
 const C = window.Cesium;
 let viewer = null, rotating = true, rotateTick = null;
+const GL_HELP = 'The globe needs WebGL 2 with graphics acceleration. Brave / Chrome: open brave://gpu (chrome://gpu) and look at "WebGL2"; if it says '
+  + 'disabled or software, turn on "Use graphics acceleration when available" in Settings &rsaquo; System, and set "Override software rendering list" '
+  + 'to Enabled in brave://flags, then relaunch. Firefox: about:config &rsaquo; webgl.force-enabled = true, then reload. Or open the studio from '
+  + 'another machine on the network; the rest of the desk works here without it.';
+function webglProblem() {
+  const c = document.createElement('canvas');
+  let gl = null;
+  try { gl = c.getContext('webgl2', { failIfMajorPerformanceCaveat: false }); } catch (e) { gl = null; }
+  if (gl) return null;
+  const gl1 = (() => { try { return c.getContext('webgl'); } catch (e) { return null; } })();
+  return `<b>${gl1 ? 'This browser has WebGL 1 only; the globe needs WebGL 2.' : 'This browser has no WebGL.'}</b><br><br>${GL_HELP}`;
+}
+
 const KIND_COLOR = { airport: '#ffd86b', country: '#5aa9e6', state: '#7bc96f', city: '#e08a7a', place: '#c45bd3' };
 
 function terrariumProvider() {
@@ -43,13 +56,13 @@ function terrariumProvider() {
   });
 }
 
-function makeViewer(box) {
+function makeViewer(box, msaa) {
   C.Ion.defaultAccessToken = 'unused-no-ion';
   const v = new C.Viewer(box, {
     baseLayer: false, baseLayerPicker: false, geocoder: false, homeButton: false, sceneModePicker: false, navigationHelpButton: false,
     animation: false, timeline: false, fullscreenButton: false, infoBox: false, selectionIndicator: false, vrButton: false,
-    terrainProvider: new C.EllipsoidTerrainProvider(), shouldAnimate: false, msaaSamples: 4,
-    contextOptions: { webgl: { alpha: false, preserveDrawingBuffer: false, powerPreference: 'high-performance' } },
+    terrainProvider: new C.EllipsoidTerrainProvider(), shouldAnimate: false, msaaSamples: msaa,
+    contextOptions: { webgl: { alpha: false, preserveDrawingBuffer: false, powerPreference: msaa > 1 ? 'high-performance' : 'default', failIfMajorPerformanceCaveat: false } },
   });
   const s = v.scene;
   s.globe.baseColor = C.Color.fromCssColorString('#0a1424');
@@ -59,10 +72,11 @@ function makeViewer(box) {
   s.globe.maximumScreenSpaceError = 2.0; s.globe.tileCacheSize = 160;
   s.skyAtmosphere.show = true; s.fog.enabled = true; s.highDynamicRange = false; s.postProcessStages.fxaa.enabled = true;
   v.showRenderLoopErrors = false;
-  const base = new C.WebMapTileServiceImageryProvider({
-    url: `${GIBS_WMTS}/BlueMarble_ShadedRelief_Bathymetry/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.jpeg`,
-    layer: 'BlueMarble_ShadedRelief_Bathymetry', style: 'default', format: 'image/jpeg', tileMatrixSetID: '500m', maximumLevel: 8,
-    tilingScheme: new C.GeographicTilingScheme(), credit: new C.Credit(CREDITS.gibs),
+  // Blue Marble from GIBS's Web Mercator grid (standard 256 px power-of-two tiles; the EPSG:4326 "500m" set has 2, 3, 5, 10 ... columns
+  // per level, which Cesium's geographic scheme cannot address: tiles landed off by a column and the outer ones came back 400)
+  const base = new C.UrlTemplateImageryProvider({
+    url: `${GIBS_WMTS_3857}/BlueMarble_ShadedRelief_Bathymetry/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg`,
+    tilingScheme: new C.WebMercatorTilingScheme(), maximumLevel: 8, tileWidth: 256, tileHeight: 256, credit: new C.Credit(CREDITS.gibs),
   });
   s.imageryLayers.addImageryProvider(base);
   const eox = new C.UrlTemplateImageryProvider({ url: EOX_URL, tilingScheme: new C.GeographicTilingScheme(), maximumLevel: 15, tileWidth: 256, tileHeight: 256, credit: new C.Credit(CREDITS.eox) });
@@ -109,7 +123,17 @@ async function drawGlobe() {
     t.themes.forEach(x => { const o = document.createElement('option'); o.value = x.theme; o.textContent = x.theme + ' (' + x.pages + ')'; $('#gblead').appendChild(o); });
   }
   const d = await api(`/api/globe?${f ? 'focus=' + f.id + '&' : ''}${lead ? 'lead=' + encodeURIComponent(lead) + '&' : ''}kind=${$('#gbkind').value}&min=${$('#gbmin').value}&photos=${$('#gbphotos').checked ? 1 : 0}`);
-  if (!viewer) { viewer = makeViewer($('#globebox')); GB = viewer; }
+  if (!viewer) {
+    const box = $('#globebox');
+    const why = webglProblem();
+    if (why) { box.innerHTML = `<div class="globe-nogl">${why}</div>`; GB = null; return; }
+    try { viewer = makeViewer(box, 4); }
+    catch (e1) {
+      try { box.innerHTML = ''; viewer = makeViewer(box, 1); }
+      catch (e2) { box.innerHTML = `<div class="globe-nogl"><b>The globe could not start in this browser.</b><br>${String(e2.message || e2).replace(/</g, '&lt;').slice(0, 400)}<br><br>${GL_HELP}</div>`; GB = null; return; }
+    }
+    GB = viewer;
+  }
   viewer.scene.terrainProvider = $('#gbterrain').checked ? terrariumProvider() : new C.EllipsoidTerrainProvider();
   rotating = $('#gbrot').checked;
   const E = viewer.entities; E.removeAll();
