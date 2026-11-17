@@ -2,6 +2,10 @@
 
 Updates to The Epstein Files - Lion Studios, newest first. The project has no version numbers; each entry is dated.
 
+## 2026-11-17
+
+- **CI** on the current action majors (checkout v7, setup-python v7, setup-node v7) and Node 24; the first run on main passed.
+
 ## 2026-11-16 — Public release
 
 - **Repository public** under the Lion Studios Source-Available Licence 1.0 (non-commercial use free with attribution; commercial use
