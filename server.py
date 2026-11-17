@@ -467,7 +467,7 @@ def api_insights(p):
                     f = figs[x["id"]]
                     out["bulbs"].append({"kind": "figure on lead pages", "a": {"id": f["id"], "name": f["name"], "type": "PERSON"}, "lead": name, "q": q, "why": f"{f['name']} ({f['category']}) is mentioned on {x['n']} pages that use the words of the lead '{name}' — read them before drawing anything", "weight": x["n"], "score": x["n"]})
     out["bulbs"].sort(key=lambda b: -b["score"])
-    out["note"] = "A light bulb is a pattern in the mentions, not a finding: every one links to the pages it rests on. Read them; the notebook is for what you conclude."
+    out["note"] = "A pattern in the mentions is not a finding: every one links to the pages it rests on. Read them; the notebook is for what you conclude."
     _INS.update(t=time.time(), d=out)
     return out
 

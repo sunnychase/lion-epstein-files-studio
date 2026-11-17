@@ -5,33 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Epstein Files - Lion Studios</title>
 <meta name="copyright" content="(c) 2026 Sunny Chase - Lion Studios. All rights reserved.">
-<!-- Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) -->
-<style>
-:root{--bg:#0f1115;--panel:#171a21;--line:#262b36;--ink:#e6e8ee;--dim:#9aa3b2;--acc:#d9a441;--p:#5aa9e6;--o:#8fd18f;--pl:#e08a7a;--r:#c45bd3;--d:#c9c9c9;--m:#79c7c0;--hi:#3b3310}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,Segoe UI,Roboto,sans-serif}
-header{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5;flex-wrap:wrap}
-header h1{font-size:16px;margin:0;color:var(--acc);letter-spacing:.3px}header .sub{color:var(--dim);font-size:12px}
-nav{display:flex;gap:4px;flex-wrap:wrap}nav button{background:transparent;border:1px solid var(--line);color:var(--ink);padding:6px 11px;border-radius:7px;cursor:pointer}nav button.on{background:#232838;border-color:var(--acc)}
-#groups button{font-weight:600;letter-spacing:.2px}#tabs button{display:none;font-size:13px;padding:4px 10px;border-color:transparent;color:var(--dim)}#tabs button.show{display:inline-block}#tabs button.on{color:var(--ink);border-color:var(--line);background:#1d222c}
-main{padding:14px 16px;max-width:1500px;margin:0 auto}section{display:none}section.on{display:block}
-input,select,textarea{background:#0b0d12;border:1px solid var(--line);color:var(--ink);padding:7px 9px;border-radius:7px;font:inherit}input[type=text],input[type=search]{min-width:260px}
-button.act{background:var(--acc);color:#111;border:0;padding:7px 12px;border-radius:7px;cursor:pointer;font-weight:600}button.sm{padding:3px 8px;font-size:12px;background:#232838;color:var(--ink);border:1px solid var(--line);border-radius:6px;cursor:pointer}
-.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:900px){.cols{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0}.card h3{margin:0 0 8px;font-size:14px;color:var(--acc)}
-.hit{border-top:1px solid var(--line);padding:8px 0}.hit:first-child{border-top:0}.snip{color:var(--ink)}.snip b,mark{background:var(--hi);color:#ffe9a8;padding:0 2px;border-radius:3px}
-.meta{color:var(--dim);font-size:12px}.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;margin:2px 3px 2px 0;border:1px solid var(--line);cursor:pointer;color:var(--ink)}
-.PERSON{border-color:var(--p)}.ORG{border-color:var(--o)}.PLACE{border-color:var(--pl)}.REDACTION{border-color:var(--r);background:#2a1430}.DATE{border-color:var(--d)}.EMAIL,.PHONE,.TAIL,.CASE{border-color:var(--m)}.MONEY{border-color:#d2b45a}
-a,.lnk{color:var(--p);cursor:pointer;text-decoration:none}.lnk:hover{text-decoration:underline}table{border-collapse:collapse;width:100%}td,th{padding:5px 7px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--dim);font-weight:500;font-size:12px}
-#gsvg{width:100%;height:70vh;background:#0b0d12;border:1px solid var(--line);border-radius:10px}.quote{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;white-space:pre-wrap;background:#0b0d12;border-left:3px solid var(--acc);padding:6px 9px;margin:4px 0;border-radius:4px}
-.pageimg{max-width:100%;border:1px solid var(--line);border-radius:6px;background:#fff}.pagetext{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;white-space:pre-wrap;background:#0b0d12;padding:10px;border-radius:8px;max-height:70vh;overflow:auto}
-.notice{border:1px solid var(--r);background:#1d1222;border-radius:8px;padding:8px 10px;color:#e9c9f1;font-size:13px}.kpi{display:inline-block;margin:0 14px 6px 0}.kpi b{color:var(--acc);font-size:18px}
-.bulb{border-top:1px solid var(--line);padding:8px 0;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:start}.bulb .ico{font-size:22px;filter:drop-shadow(0 0 6px #ffd86b);animation:glow 2.4s ease-in-out infinite}@keyframes glow{0%,100%{opacity:.55}50%{opacity:1}}.bulb .k{font-size:11px;color:var(--acc);text-transform:uppercase;letter-spacing:.4px}
-.legend span{margin-right:10px;font-size:12px}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:middle}
-</style>
+<link rel="stylesheet" href="fonts/fonts.css"><link rel="stylesheet" href="app.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
 <body>
 <header>
-  <div><h1>The Epstein Files - Lion Studios</h1><div class="sub">Public court and government records · every link backed by a quoted page · redacted parties stay redacted</div></div>
+  <div class="mast">
+    <a class="brand" href="#"> <svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="32" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 15h38" stroke="currentColor" stroke-width="2"/><path d="M9 7V4h12l3 3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="21" width="24" height="3" fill="var(--mark)"/><rect x="10" y="28" width="16" height="3" fill="var(--mark)"/><circle cx="33" cy="30" r="4" fill="none" stroke="var(--mark)" stroke-width="2"/></svg> <h1>The Epstein Files<small>Lion Studios · case desk</small></h1></a>
+    <div class="dek">Public court and government records, read as one case file. Every connection on this desk carries the pages it rests on; redacted parties stay redacted.</div>
+    <div class="right"><button class="theme" id="themebtn" title="day / night"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></div>
+  </div>
   <nav id="groups">
     <button data-g="desk" class="on">Desk</button><button data-g="explore">Explore</button><button data-g="connect">Connections</button><button data-g="investigate">Investigate</button><button data-g="notes">Notebook</button>
   </nav>
@@ -47,7 +30,7 @@ a,.lnk{color:var(--p);cursor:pointer;text-decoration:none}.lnk:hover{text-decora
 <main>
 
 <section id="dash" class="on">
-  <div id="bulbs" class="card" style="border-color:var(--acc)"><h3>💡 Light bulbs</h3><div class="meta">finding the connections that no single page shows…</div></div>
+  <div id="bulbs" class="card"><h3>Patterns</h3><div class="meta">finding the connections that no single page shows…</div></div>
   <div id="dashbody"><div class="meta">loading the desk…</div></div>
 </section>
 
@@ -176,7 +159,7 @@ a,.lnk{color:var(--p);cursor:pointer;text-decoration:none}.lnk:hover{text-decora
 </div>
 
 </main>
-<footer style="margin:28px 0 10px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px"><span>&copy; 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary software.</span><span>Records: public court and government releases · imagery: NASA GIBS, EOX, AWS Terrain Tiles</span></footer>
+<footer><span><b>The Epstein Files</b> · &copy; 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary software.</span><span>Records: public court and government releases · imagery: NASA GIBS, EOX, AWS Terrain Tiles</span></footer>
 <script src="vendor/d3.v7.min.js"></script>
 <script src="vendor/3d-force-graph.min.js"></script>
 <script>window.CESIUM_BASE_URL='vendor/cesium/';</script><link rel="stylesheet" href="vendor/cesium/Widgets/widgets.css"><script src="vendor/cesium/Cesium.js"></script>
@@ -184,6 +167,7 @@ a,.lnk{color:var(--p);cursor:pointer;text-decoration:none}.lnk:hover{text-decora
 const $=s=>document.querySelector(s);const ACT=[];const reg=f=>{ACT.push(f);return `onclick="ACT[${ACT.length-1}]()"`}; const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const api=async(u,o)=>{const r=await fetch(u,o);return r.json()};
 function showGroup(g){document.querySelectorAll('#groups button').forEach(x=>x.classList.toggle('on',x.dataset.g===g));document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('show',x.dataset.g===g))}
+showGroup('desk');
 document.querySelectorAll('#groups button').forEach(b=>b.onclick=()=>{showGroup(b.dataset.g);const first=document.querySelector(`#tabs button[data-g=${b.dataset.g}]`);if(first&&!document.querySelector(`#tabs button[data-g=${b.dataset.g}].on`))first.click()});
 document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{showGroup(b.dataset.g);document.querySelectorAll('#tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('main>section').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));if(b.dataset.t==='docs')loadDocs();if(b.dataset.t==='redact')loadRedactions();if(b.dataset.t==='notebook')loadNotes();if(b.dataset.t==='graph'&&!gdrawn)drawGraph();if(b.dataset.t==='g3d'&&!g3drawn)draw3d();if(b.dataset.t==='emails')loadEmails();if(b.dataset.t==='photos')loadPhotos();if(b.dataset.t==='figures')loadFigures();if(b.dataset.t==='leads')loadLeads();if(b.dataset.t==='dash')loadDash();if(b.dataset.t==='money')loadMoney();if(b.dataset.t==='timeline')loadTimeline();if(b.dataset.t==='globe'&&!GB)drawGlobe();});
 const tag=e=>`<span class="tag ${e.type}" onclick="openEntity(${e.id})" title="${e.type}">${esc(e.name)}</span>`;
@@ -205,7 +189,7 @@ async function openEntity(id){document.querySelector('#tabs button[data-t=people
   $('#edetail').innerHTML=`<h3>${esc(e.name)} <span class="tag ${e.type}">${e.type}</span></h3><div class="meta">${e.mentions.length} quoted mention(s) in ${e.documents.length} document(s)${e.aliases.length?' · aliases merged: '+esc(e.aliases.join(', ')):''} · <span class="lnk" ${reg(()=>{$('#gcenter').value=e.name;document.querySelector('#tabs button[data-t=graph]').click();drawGraph()})}>show in graph</span> · <span class="lnk" ${reg(()=>{$('#pa').value=e.name;document.querySelector('#tabs button[data-t=path]').click()})}>path from here</span></div>
   ${e.type==='REDACTION'?'<div class="notice">A redaction label. Its context is shown; its identity is not inferred.</div>':`<div class="row"><button class="sm" ${reg(()=>lookup(e.id,e.name))}>look up on Wikipedia</button><a class="sm" style="text-decoration:none" href="https://duckduckgo.com/?q=${encodeURIComponent('"'+e.name+'" Epstein')}" target="_blank" rel="noopener">search the web ↗</a><span class="meta">what the open web says, kept apart from the files; never merged into the database</span></div><div id="lk${e.id}"></div>`}
   ${e.profile?`<div class="card"><b>${esc(e.profile.title)}</b> <span class="tag" style="border-color:${CATCOL[e.profile.category]||'#555'}">${esc(e.profile.category)}</span> <span class="meta">${esc(e.profile.description||'')}</span><div class="meta">${esc(e.profile.extract||'')}</div><div class="meta">Wikipedia, exact title match, unverified · <a href="${esc(e.profile.url)}" target="_blank" rel="noopener">open ↗</a></div></div>`:''}
-  <div class="row">${e.photos?`<button class="sm" ${reg(()=>{$('#phwho').value=e.name;document.querySelector('#tabs button[data-t=photos]').click();loadPhotos()})}>📷 ${e.photos} photo page(s) in their documents</button>`:''}${e.emailed&&e.emailed.length?`<button class="sm" ${reg(()=>{$('#emwho').value=e.name;document.querySelector('#tabs button[data-t=emails]').click();loadEmails()})}>✉ e-mails</button>`:''}<button class="sm" ${reg(()=>{$('#c3').value=e.name;document.querySelector('#tabs button[data-t=g3d]').click();draw3d()})}>3D bubbles here</button></div>
+  <div class="row">${e.photos?`<button class="sm" ${reg(()=>{$('#phwho').value=e.name;document.querySelector('#tabs button[data-t=photos]').click();loadPhotos()})}>${e.photos} picture page(s) in their documents</button>`:''}${e.emailed&&e.emailed.length?`<button class="sm" ${reg(()=>{$('#emwho').value=e.name;document.querySelector('#tabs button[data-t=emails]').click();loadEmails()})}>e-mails</button>`:''}<button class="sm" ${reg(()=>{$('#c3').value=e.name;document.querySelector('#tabs button[data-t=g3d]').click();draw3d()})}>3D bubbles here</button></div>
   ${e.emailed&&e.emailed.length?`<details open><summary>E-mails exchanged with (${e.emailed.length})</summary><table><tr><th>who</th><th>e-mails</th><th>open</th></tr>${e.emailed.map(c=>`<tr><td>${tag({id:c.other_id,type:c.type,name:c.name})}</td><td>${c.weight}</td><td>${c.pages.slice(0,5).map(p=>`<span class="lnk" onclick="openPage(${p})">p</span>`).join(' ')}</td></tr>`).join('')}</table></details>`:''}
   <details open><summary>Documents (${e.documents.length})</summary><table><tr><th>document</th><th>filed</th><th>mentions</th><th>first</th></tr>${docs}</table></details>
   <details open><summary>Shares pages with (${e.connections.length})</summary><table><tr><th>who / what</th><th>pages shared</th><th>open</th></tr>${con}</table></details>
@@ -273,7 +257,7 @@ async function sideNode3(n){const e=await api('/api/entity/'+n.id+'?limit=6');$(
 async function lookup(id,name){const box=$('#lk'+id);box.innerHTML='<span class="meta">looking up…</span>';const d=await api('/api/lookup?name='+encodeURIComponent(name));
   box.innerHTML=d.found?`<div class="card" style="margin:6px 0"><div class="meta">Unverified: a Wikipedia article whose title matches this name. It may be a different person with the same name; the files are the evidence, not this box.</div><b>${esc(d.title)}</b> <span class="meta">${esc(d.description||'')}</span><div>${esc(d.extract||'')}</div><div><a href="${esc(d.url)}" target="_blank" rel="noopener">open on Wikipedia</a></div></div>`:`<div class="meta">No Wikipedia article with exactly this title. <a href="https://duckduckgo.com/?q=${encodeURIComponent('"'+name+'" Epstein')}" target="_blank" rel="noopener">search the web</a> (opens in a new tab; nothing is stored).</div>`}
 async function loadBulbs(){const d=await api('/api/insights');const see=b=>b.b?`<span class="lnk" ${reg(()=>{$('#r3a').value=b.a.name;$('#r3b').value=b.b.name;$('#c3').value=b.a.name;document.querySelector('#tabs button[data-t=g3d]').click();draw3d().then(()=>setTimeout(route3d,1500))})}>route in 3D</span> · <span class="lnk" ${reg(()=>{$('#pa').value=b.a.name;$('#pb').value=b.b.name;document.querySelector('#tabs button[data-t=path]').click();findPath()})}>quotes</span>`:b.q?`<span class="lnk" ${reg(()=>{$('#q').value='"'+b.a.name+'" AND ('+b.q+')';document.querySelector('#tabs button[data-t=search]').click();doSearch()})}>the pages</span>`:`<span class="lnk" onclick="openEntity(${b.a.id})">record</span>`;
-  $('#bulbs').innerHTML=`<h3>💡 Light bulbs <span class="meta">${d.bulbs.length} connections no single page shows</span></h3><div class="meta">${esc(d.note)}</div>`+d.bulbs.slice(0,40).map(b=>`<div class="bulb"><div class="ico">💡</div><div><div class="k">${esc(b.kind)}</div><div>${esc(b.why)}</div><div>${tag(b.a)}${b.b?' '+tag(b.b):''}${b.via?' <span class="meta">via</span> '+b.via.map(v=>tag({id:v.id,type:v.type||'PERSON',name:v.name})).join(''):''}</div></div><div class="meta">${see(b)}</div></div>`).join('');}
+  $('#bulbs').innerHTML=`<h3>Patterns <span class="meta">${d.bulbs.length} connections no single page shows</span></h3><div class="meta">${esc(d.note)}</div>`+d.bulbs.slice(0,40).map(b=>`<div class="bulb"><div class="ico"></div><div><div class="k">${esc(b.kind)}</div><div>${esc(b.why)}</div><div>${tag(b.a)}${b.b?' '+tag(b.b):''}${b.via?' <span class="meta">via</span> '+b.via.map(v=>tag({id:v.id,type:v.type||'PERSON',name:v.name})).join(''):''}</div></div><div class="meta">${see(b)}</div></div>`).join('');}
 async function loadDash(){loadBulbs();const d=await api('/api/dashboard');const go3d=(a,b)=>{$('#r3a').value=a;$('#r3b').value=b;$('#c3').value=a;document.querySelector('#tabs button[data-t=g3d]').click();draw3d().then(()=>setTimeout(route3d,1500))};const goPath=(a,b)=>{$('#pa').value=a;$('#pb').value=b;document.querySelector('#tabs button[data-t=path]').click();findPath()};
   const pair=(x)=>`<tr><td>${tag({id:x.a_id,type:'PERSON',name:x.a_name})} <span class="meta">↔</span> ${tag({id:x.b_id,type:'PERSON',name:x.b_name})}</td><td>${x.weight}</td><td><span class="lnk" ${reg(()=>go3d(x.a_name,x.b_name))}>3D</span> · <span class="lnk" ${reg(()=>goPath(x.a_name,x.b_name))}>quotes</span></td></tr>`;
   const cats=Object.keys(d.figures).sort((a,b)=>(CATS.indexOf(a)+1||99)-(CATS.indexOf(b)+1||99));
@@ -336,5 +320,6 @@ window.addEventListener('hashchange',route);
 stats().then(()=>{route();if(!location.hash)loadDash()});
 </script>
 <script src="globe.js"></script>
+<script>(function(){var b=document.getElementById('themebtn');if(!b)return;b.onclick=function(){var d=document.documentElement;var n=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}}})();</script>
 </body>
 </html>
