@@ -2,6 +2,11 @@
 
 (c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary software: see LICENSE.
 
+<p align="center"><a href="samples/video/the-epstein-files-reel-59s.mp4"><img src="docs/media/preview.webp" width="100%" alt="The Epstein Files - Lion Studios: the dashboard, 3D bubbles, a real globe of places and flight legs, follow the money, every link backed by a quoted page"></a><br>
+<sub>▶ <a href="samples/video/the-epstein-files-reel-59s.mp4"><b>Watch the 59-second showcase reel</b></a> (MP4, 1080p, with an original score): dashboard, timeline, 3D bubbles, a real Earth, follow the money, the graph and the leads. Recorded from the live studio; public records only.</sub></p>
+
+
+
 **A detective's desk for public records: every person, place, date and thing in the Epstein court and government files, every link between them backed by a quoted page, and a case notebook.** One small Python server (standard library + SQLite), any browser.
 
 *Created by [Sunny Chase](https://github.com/sunnychase) in collaboration with Claude (Anthropic).*
