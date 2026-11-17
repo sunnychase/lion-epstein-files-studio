@@ -39,3 +39,9 @@ EFILES_HOST=0.0.0.0 EFILES_PORT=8670 python3 server.py        # or the user unit
 ```
 
 Requirements: Python 3.10+, poppler-utils (`pdftotext`, `pdftoppm`), spaCy with `en_core_web_lg`. The front end vendors d3 v7 (ISC).
+
+## Page images (compressed packs)
+The releases carry each image set as numbered zip parts of compressed pages (1300 px tall, greyscale, JPEG q45: about a tenth of the
+release scans, every line legible). `./fetch_images.sh <set> data/<item>` downloads, verifies and unpacks a set;
+`tools/backfill_images.py` then points each page at its image by Bates number. `tools/compress_images.py` makes the packs
+(from a folder of originals, or streamed straight from archive.org so no original touches the disk). Full-resolution originals: archive.org.
