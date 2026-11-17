@@ -184,9 +184,7 @@ and a sha256 manifest. Fetch, verify, unpack, then point the pages at their imag
 python3 tools/backfill_images.py --db efiles.db --item ia-house-oversight-additional-20251112
 ```
 
-The server picks them up at once. While this repository is private the plain-curl download in `fetch_images.sh`
-needs a token: run `gh release download images-house-additional-2025-11-12 -D data/ia-house-oversight-additional-20251112/.packs`
-first and the script will skip the download and go straight to verification.
+The server picks them up at once. The release is public; no login is needed.
 
 Make your own pack from any image set, without keeping the originals on disk:
 
