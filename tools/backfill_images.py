@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · Lion Epstein Files Studio
+# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · The Epstein Files - Lion Studios
 """backfill_images.py -- after the page images of a production item arrive (compressed packs or originals), point each page at its image
 by Bates number: pages.image_path = the file under <source_dir>/IMAGES whose name is the page's Bates stamp.
   python3 tools/backfill_images.py --db efiles.db --item ia-house-oversight-additional-20251112

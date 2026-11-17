@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · Lion Epstein Files Studio
+# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · The Epstein Files - Lion Studios
 """extras.py -- a second pass over the pages already in efiles.db (no NER): e-mails, web links, photo pages.
   * EMAILS: every printed e-mail header block on a page (From / Sent|Date / To / Cc / Subject) -> the `emails` table (page, document, from, to,
     cc, date, subject, each raw line kept) and typed links kind='emailed' between the sender and every recipient the studio can name (a

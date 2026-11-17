@@ -1,5 +1,5 @@
 [Unit]
-Description=Lion Epstein Files Studio (public-record document graph; stdlib server, SQLite)
+Description=The Epstein Files - Lion Studios (public-record document graph; stdlib server, SQLite)
 After=network-online.target
 
 [Service]

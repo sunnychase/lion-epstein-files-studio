@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · Lion Epstein Files Studio
+# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · The Epstein Files - Lion Studios
 """money.py -- FOLLOW THE MONEY: every money amount on every page, read with the sentence around it.
   * amount: $ / US$ / USD figures (with million / billion / k scales) and "N dollars"; the numeric value is kept
   * the verb near it decides the kind: paid / wired / transferred / received / deposited / withdrew / check / invoice / loan / fee / retainer /

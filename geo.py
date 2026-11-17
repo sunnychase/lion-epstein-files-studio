@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · Lion Epstein Files Studio
+# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · The Epstein Files - Lion Studios
 """geo.py -- put the files on the globe, offline: a built-in gazetteer (countries and their aliases, U.S. states, the cities and the case's own
 places, and the airports that appear in flight logs) is matched against the PLACE entities; airport codes (ICAO / IATA) are read from pages
 that look like flight records (an aircraft tail number or the word flight / manifest / log on the page, and at least two codes) and become

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · Lion Epstein Files Studio
+# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · The Epstein Files - Lion Studios
 """compress_images.py -- page images small enough to ship: 1300 px tall, greyscale, JPEG quality 45 (about 117 KB a page, a tenth of
 the release scans, every line still legible). Two sources, one output tree that keeps the release's relative paths and file names:
 
@@ -35,7 +35,7 @@ def convert_url(url, dst_file):
     os.makedirs(os.path.dirname(dst_file), exist_ok=True)
     for attempt in range(4):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "LionEpsteinFilesStudio/1.0"}), timeout=120) as resp:
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "TheEpsteinFiles-LionStudios/1.0"}), timeout=120) as resp:
                 body = resp.read()                       # the whole image in memory (about 1 MB), then through convert: nothing on disk
             r = subprocess.run(["convert", "-[0]", *CONVERT, dst_file + ".part"], input=body, capture_output=True)
             if r.returncode == 0 and os.path.getsize(dst_file + ".part") > 0:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · Lion Epstein Files Studio
+# Created by Sunny Chase (https://github.com/sunnychase) in collaboration with Claude (Anthropic) · The Epstein Files - Lion Studios
 """ingest.py -- build (or extend) the studio's database from a SOURCE folder of public records. Three source shapes:
   --mode pdf          one or more PDFs; a document boundary is a court docket header ("Case <no> Document <n> Filed <date> Page <i> of <j>")
                       or, when none, the PDF itself (the Internet Archive court-filing items)
