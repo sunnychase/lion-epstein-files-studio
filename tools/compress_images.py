@@ -36,7 +36,8 @@ def convert_url(url, dst_file):
     for attempt in range(4):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "LionEpsteinFilesStudio/1.0"}), timeout=120) as resp:
-                r = subprocess.run(["convert", "-[0]", *CONVERT, dst_file + ".part"], stdin=resp, capture_output=True)
+                body = resp.read()                       # the whole image in memory (about 1 MB), then through convert: nothing on disk
+            r = subprocess.run(["convert", "-[0]", *CONVERT, dst_file + ".part"], input=body, capture_output=True)
             if r.returncode == 0 and os.path.getsize(dst_file + ".part") > 0:
                 os.replace(dst_file + ".part", dst_file); return True
         except Exception:   # noqa: BLE001  (a dropped connection: try again)
@@ -66,14 +67,17 @@ def from_dir(a):
                 rel = os.path.relpath(os.path.join(root, f), a.src); o = out_path(a.dst, rel)
                 if not os.path.exists(o):
                     tasks.append((convert_file, os.path.join(root, f), o))
-    print(len(tasks), "to convert"); return run(a.jobs, tasks, "from-dir")
+    print(len(tasks), "to convert", flush=True); return run(a.jobs, tasks, "from-dir")
 
 
 def from_archive(a):
-    x = urllib.request.urlopen(f"https://archive.org/download/{a.item}/{a.item}_files.xml", timeout=60).read().decode()
+    cache = os.path.join(a.dst, ".files.xml"); os.makedirs(a.dst, exist_ok=True)
+    if not os.path.exists(cache):
+        open(cache, "wb").write(urllib.request.urlopen(f"https://archive.org/download/{a.item}/{a.item}_files.xml", timeout=120).read())
+    x = open(cache, encoding="utf-8", errors="replace").read()
     names = [n for n in re.findall(r'<file name="([^"]+)"', x) if re.search(a.pattern, n) and IMG.search(n)]
     tasks = [(convert_url, f"https://archive.org/download/{a.item}/{urllib.parse.quote(n)}", out_path(a.dst, n)) for n in names if not os.path.exists(out_path(a.dst, n))]
-    print(len(names), "images in the item,", len(tasks), "to fetch and convert"); return run(a.jobs, tasks, a.item)
+    print(len(names), "images in the item,", len(tasks), "to fetch and convert", flush=True); return run(a.jobs, tasks, a.item)
 
 
 def pack(a):
