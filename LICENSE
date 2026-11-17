@@ -1,10 +1,58 @@
 The Epstein Files - Lion Studios
-Copyright (c) 2026 Sunny Chase - Lion Studios. All rights reserved.
+Lion Studios Source-Available Licence, version 1.0 (16 November 2026)
 
-This software and its source code are proprietary and confidential. No part of it may be copied, modified,
-distributed, published, sublicensed or used, in whole or in part, without the prior written permission of
-Sunny Chase - Lion Studios. The software is provided "as is", without warranty of any kind.
+Copyright (c) 2026 Sunny Chase - Lion Studios. All rights reserved except as granted below.
 
-Third-party components keep their own licences: see static/vendor/VERSIONS.txt (d3, 3d-force-graph, CesiumJS).
-Imagery and terrain shown at run time are fetched from NASA GIBS, EOX (CC BY-NC-SA 4.0) and AWS Terrain Tiles
-under their own terms. The records are public court and government releases; see each data folder's SOURCE.txt.
+1. What you may do
+   Provided you keep this notice and the copyright line in every copy, you may, free of charge:
+   a. view, download, clone and study the source code;
+   b. build, install and run the software, and modify it, for personal, educational, academic, journalistic,
+      research and other non-commercial purposes;
+   c. share unmodified copies of this repository, with this licence, free of charge;
+   d. propose changes to the original repository (a pull request). By submitting a change you grant Sunny Chase -
+      Lion Studios a perpetual, worldwide, royalty-free right to use, modify and distribute it under this licence.
+
+2. What needs written permission from Sunny Chase - Lion Studios
+   a. commercial use of any kind: selling the software or access to it, running it as a paid or advertising-supported
+      service, bundling it in a product, or using it inside a business for its customers;
+   b. publishing a modified version or a fork as a project of its own, or distributing modified copies;
+   c. using the names "Lion Studios", "The Epstein Files - Lion Studios", the Lion Studios mark or the studio's
+      videos, previews and screenshots to promote anything, or in a way that suggests endorsement;
+   d. removing or altering the copyright line, this licence, the product name in the interface, or the provenance
+      the studio shows for every page (item, file and page).
+   Ask through https://github.com/sunnychase. Permission, when given, is in writing and may carry conditions.
+
+3. Conditions of use
+   a. The records the studio reads are public court and government releases. Their redactions protect victims and
+      parties a court withheld. You may not use this software, or data produced with it, to identify, or to publish a
+      claim about the identity of, a person the records redact.
+   b. A name on a page is a mention, nothing more. If you publish results produced with the studio, keep the page
+      references with them and do not present a co-mention as a finding.
+   c. Any copy you share, and any public use of results, carries the attribution "Built with The Epstein Files -
+      Lion Studios by Sunny Chase, https://github.com/sunnychase/lion-epstein-files-studio".
+
+4. Data and content
+   The documents themselves are public records and are not licensed by this notice; each data folder's SOURCE.txt
+   names the public source. The compiled watchlist, the dashboard texts, the showcase video, its score, the previews
+   and the sample files are the author's work under this licence. Nothing you write in your own case notebook
+   belongs to anyone but you.
+
+5. Third-party components
+   These keep their own licences and are not covered by this one: d3 (ISC), 3d-force-graph with three.js (MIT),
+   CesiumJS (Apache-2.0), the Fraunces, IBM Plex Sans and IBM Plex Mono fonts (SIL Open Font License 1.1; see
+   static/fonts/LICENSES.txt), the bundled SQLite (public domain), and the Rust crates named in rust/Cargo.lock.
+   Imagery and terrain fetched at run time come from NASA GIBS, EOX IT Services (Sentinel-2 cloudless, CC BY-NC-SA 4.0)
+   and the AWS Terrain Tiles under their own terms. spaCy and its models are installed by the user under their own
+   licences.
+
+6. Termination
+   Your rights under this licence end automatically if you breach it. They return once the breach is cured, unless
+   Sunny Chase - Lion Studios has told you in writing that they will not.
+
+7. No warranty; limitation of liability
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING ACCURACY OF THE
+   TEXT EXTRACTION, THE ENTITY RECOGNITION AND THE CONNECTIONS SHOWN. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+   ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE SOFTWARE OR ITS USE.
+
+This is not an Open Source Initiative approved licence: it allows free non-commercial use and study but reserves
+commercial use and the publication of forks to the copyright holder.

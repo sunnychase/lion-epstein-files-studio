@@ -1,6 +1,6 @@
 # The Epstein Files - Lion Studios
 
-(c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary software: see LICENSE.
+(c) 2026 Sunny Chase - Lion Studios. Source-available: free to study, run and modify for non-commercial use; commercial use and published forks need written permission. See [LICENSE](LICENSE).
 
 <p align="center"><a href="samples/video/the-epstein-files-reel-59s.mp4"><img src="docs/media/preview.webp" width="100%" alt="The Epstein Files - Lion Studios: the dashboard, 3D bubbles, a real globe of places and flight legs, follow the money, every link backed by a quoted page"></a><br>
 <sub>▶ <a href="samples/video/the-epstein-files-reel-59s.mp4"><b>Watch the 59-second showcase reel</b></a> (MP4, 1080p, with an original score): dashboard, timeline, 3D bubbles, a real Earth, follow the money, the graph and the leads. Recorded from the live studio; public records only.</sub></p>

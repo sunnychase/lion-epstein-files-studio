@@ -2,7 +2,7 @@
 // One webm per scene under OUT/; the reel is cut from them by tools/build_reel.sh. No people's pages, no photos, no e-mail views
 // are recorded: the dashboard, timeline, 3D bubbles, globe, money, graph and leads only.
 //   URL=http://127.0.0.1:8670 OUT=~/efiles/cache/reel node tools/record_reel.cjs
-const { chromium } = require(process.env.PW || (process.env.HOME + '/.hermes/hermes-agent/node_modules/playwright'));
+const { chromium } = require(process.env.PW || 'playwright');
 const fs = require('fs'); const path = require('path');
 const URL = process.env.URL || 'http://127.0.0.1:8670'; const OUT = process.env.OUT || 'reel'; fs.mkdirSync(OUT, { recursive: true });
 const W = 1920, H = 1080;

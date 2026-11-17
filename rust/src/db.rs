@@ -1,4 +1,4 @@
-// (c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary.
+// (c) 2026 Sunny Chase - Lion Studios. Source-available: see LICENSE.
 //! db.rs — a pool of SQLite connections (WAL, 30 s busy timeout) and the two helpers the whole API is written with:
 //! `rows(sql, args) -> Vec<Map>` and `one(sql, args) -> Option<Map>`, every column as a JSON value, so each query reads like the SQL.
 use r2d2::Pool;

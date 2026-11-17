@@ -9,7 +9,7 @@ card(){ # name seconds line1 line2 line3
 drawtext=fontfile=$K:text='$3':fontcolor=0xf2f3f6:fontsize=96:x=60:y=$((H/2-150)),\
 drawtext=fontfile=$B:text='$4':fontcolor=0xd9a441:fontsize=54:x=62:y=$((H/2-30)),\
 drawtext=fontfile=$R:text='$5':fontcolor=0x9aa3b2:fontsize=30:x=62:y=$((H/2+60)),\
-drawtext=fontfile=$R:text='© 2026 Sunny Chase - Lion Studios. All rights reserved.':fontcolor=0x6b7280:fontsize=24:x=62:y=$((H-70)),fade=t=in:st=0:d=0.6,fade=t=out:st=$(python3 -c "print($2-0.6)"):d=0.6" -c:v libx264 -preset fast -crf 18 -pix_fmt yuv420p seg/$1.mp4; }
+drawtext=fontfile=$R:text='© 2026 Sunny Chase - Lion Studios.':fontcolor=0x6b7280:fontsize=24:x=62:y=$((H-70)),fade=t=in:st=0:d=0.6,fade=t=out:st=$(python3 -c "print($2-0.6)"):d=0.6" -c:v libx264 -preset fast -crf 18 -pix_fmt yuv420p seg/$1.mp4; }
 scene(){ # name src start seconds caption
   local cap=${5//:/\\:}
   ffmpeg -v error -y -ss "$3" -t "$4" -i "$2" -vf "scale=${W}:${H}:flags=lanczos,fps=$FPS,\

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary. Built by Sunny Chase (https://github.com/sunnychase) with Claude (Anthropic) · The Epstein Files - Lion Studios
+# (c) 2026 Sunny Chase - Lion Studios. Source-available licence (non-commercial use free; see LICENSE). Built by Sunny Chase (https://github.com/sunnychase) with Claude (Anthropic) · The Epstein Files - Lion Studios
 """compress_images.py -- page images small enough to ship: 1300 px tall, greyscale, JPEG quality 45 (about 117 KB a page, a tenth of
 the release scans, every line still legible). Two sources, one output tree that keeps the release's relative paths and file names:
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary. Built by Sunny Chase (https://github.com/sunnychase) with Claude (Anthropic) · The Epstein Files - Lion Studios
+# (c) 2026 Sunny Chase - Lion Studios. Source-available licence (non-commercial use free; see LICENSE). Built by Sunny Chase (https://github.com/sunnychase) with Claude (Anthropic) · The Epstein Files - Lion Studios
 """extras.py -- a second pass over the pages already in efiles.db (no NER): e-mails, web links, photo pages.
   * EMAILS: every printed e-mail header block on a page (From / Sent|Date / To / Cc / Subject) -> the `emails` table (page, document, from, to,
     cc, date, subject, each raw line kept) and typed links kind='emailed' between the sender and every recipient the studio can name (a

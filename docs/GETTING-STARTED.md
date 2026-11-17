@@ -1,6 +1,6 @@
 # Getting started: the studio on your own machine
 
-(c) 2026 Sunny Chase - Lion Studios. All rights reserved. See LICENSE.
+(c) 2026 Sunny Chase - Lion Studios. Source-available licence: see LICENSE.
 
 This page takes you from a clean Linux machine to the studio running on the public Epstein records, fetched straight
 from the Internet Archive. Nothing here needs an account: every source is a public archive.org item, and the only

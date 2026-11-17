@@ -1,4 +1,4 @@
-// (c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary.
+// (c) 2026 Sunny Chase - Lion Studios. Source-available: see LICENSE.
 //! api.rs — every endpoint of the studio, a port of server.py with the same SQL and the same JSON shapes, so static/ needs no change.
 //! Every answer is grounded: entities come with their mentions (page + quote), links with the pages that are their evidence.
 //! Redacted parties are objects of their own, shown with their context only; nothing here proposes who a redacted person is.
@@ -16,7 +16,7 @@ pub type Q = HashMap<String, String>;
 pub type R = Result<Value, String>;
 
 pub const PRODUCT: &str = "The Epstein Files - Lion Studios";
-pub const COPYRIGHT: &str = "(c) 2026 Sunny Chase - Lion Studios. All rights reserved.";
+pub const COPYRIGHT: &str = "(c) 2026 Sunny Chase - Lion Studios. Source-available licence: non-commercial use free, see LICENSE.";
 
 pub const THEMES: &[(&str, &str)] = &[
     ("blackmail / extortion", "\"blackmail\" OR \"extort\" OR \"extortion\" OR \"leverage\" OR \"compromis*\""),

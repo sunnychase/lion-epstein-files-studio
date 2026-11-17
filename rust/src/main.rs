@@ -1,4 +1,4 @@
-// (c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary.
+// (c) 2026 Sunny Chase - Lion Studios. Source-available: see LICENSE.
 //! The Epstein Files - Lion Studios: the studio's server as one static binary. axum over SQLite; the front end (static/) is embedded.
 //! Settings (environment): EFILES_HOST (127.0.0.1), EFILES_PORT (8670), EFILES_DB (efiles.db), EFILES_DATA (data/), EFILES_CACHE (cache/),
 //! EFILES_ROOT (the folder that holds efiles.db, data/ and suppressed.json; default: the working directory).

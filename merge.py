@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary. Built by Sunny Chase (https://github.com/sunnychase) with Claude (Anthropic) · The Epstein Files - Lion Studios
+# (c) 2026 Sunny Chase - Lion Studios. Source-available licence (non-commercial use free; see LICENSE). Built by Sunny Chase (https://github.com/sunnychase) with Claude (Anthropic) · The Epstein Files - Lion Studios
 """merge.py -- fold OCR and NER variants of the same person into one entity, with the rule written down for each merge (the aliases table,
 source 'auto:<rule>'), then rebuild counts and links. Conservative rules only:
   1 artefacts: a name ending in a header word (Sent, Cc, From, To, Subject, Re, Fw) or a possessive 's, or a doubled surname -> the base name

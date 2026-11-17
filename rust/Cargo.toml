@@ -2,7 +2,7 @@
 name = "efiles-server"
 version = "0.1.0"
 edition = "2021"
-description = "The Epstein Files - Lion Studios: the studio's server as one static binary (axum + SQLite). (c) 2026 Sunny Chase - Lion Studios. All rights reserved."
+description = "The Epstein Files - Lion Studios: the studio's server as one static binary (axum + SQLite). (c) 2026 Sunny Chase - Lion Studios. Source-available licence, see LICENSE."
 publish = false
 
 [[bin]]

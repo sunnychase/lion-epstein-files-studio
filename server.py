@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (c) 2026 Sunny Chase - Lion Studios. All rights reserved. Proprietary. Built by Sunny Chase (https://github.com/sunnychase) with Claude (Anthropic) · The Epstein Files - Lion Studios
+# (c) 2026 Sunny Chase - Lion Studios. Source-available licence (non-commercial use free; see LICENSE). Built by Sunny Chase (https://github.com/sunnychase) with Claude (Anthropic) · The Epstein Files - Lion Studios
 """server.py -- the studio's server: Python standard library only (http.server + sqlite3), the static front end in static/.
 Reads efiles.db (built by ingest.py); renders page images with pdftoppm on demand (cached); keeps the case notebook in the same database.
 Every answer is grounded in the documents: entities come with their mentions (page + quote), links with the pages that are their evidence.
@@ -27,7 +27,7 @@ HOST = os.environ.get("EFILES_HOST", "127.0.0.1"); PORT = int(os.environ.get("EF
 DB = os.environ.get("EFILES_DB", os.path.join(ROOT, "efiles.db")); DATA = os.environ.get("EFILES_DATA", os.path.join(ROOT, "data"))
 CACHE = os.environ.get("EFILES_CACHE", os.path.join(ROOT, "cache")); os.makedirs(CACHE, exist_ok=True)
 PRODUCT = "The Epstein Files - Lion Studios"
-COPYRIGHT = "(c) 2026 Sunny Chase - Lion Studios. All rights reserved."
+COPYRIGHT = "(c) 2026 Sunny Chase - Lion Studios. Source-available licence: non-commercial use free, see LICENSE."
 _local = threading.local()
 _render_lock = threading.Lock()
 
