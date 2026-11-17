@@ -1,9 +1,9 @@
 /* The Epstein Files - Lion Studios · (c) 2026 Sunny Chase - Lion Studios. All rights reserved.
-   An evidence-room look: paper, ink and one stamp red by day; a reading-lamp dark by night. Fraunces for the masthead and headings,
+   An evidence-room look: a reading-lamp dark by default; paper, ink and one stamp red in the day theme. Fraunces for the masthead and headings,
    IBM Plex Sans for the body, IBM Plex Mono with tabular figures for Bates numbers, dates and amounts. Hairlines, not boxes. */
-:root{--bg:#f3efe6;--panel:#faf7f0;--panel2:#efe9dc;--line:#d6cfbf;--line2:#e6e0d2;--ink:#1c1a16;--dim:#6d675b;--acc:#8c1d1d;--acc2:#9a7a2a;--p:#2d5f8a;--o:#3f6f3a;--pl:#9a4a2a;--r:#6b2a7a;--d:#7a7569;--m:#2a6b66;--hi:#f6e8b0;--mark:#8c1d1d;
+:root{--bg:#121310;--panel:#191a16;--panel2:#20221d;--line:#2d2f29;--line2:#262823;--ink:#e9e4d8;--dim:#9a948a;--acc:#d9a441;--acc2:#c9b48a;--p:#7fb3e6;--o:#8fd18f;--pl:#e0957a;--r:#c98bd6;--d:#b9b4a8;--m:#86d0ca;--hi:#3b3310;--mark:#d9a441;
   --serif:'Fraunces',Georgia,'Iowan Old Style',serif;--sans:'IBM Plex Sans',system-ui,'Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace}
-:root[data-theme=dark]{--bg:#121310;--panel:#191a16;--panel2:#20221d;--line:#2d2f29;--line2:#262823;--ink:#e9e4d8;--dim:#9a948a;--acc:#d9a441;--acc2:#c9b48a;--p:#7fb3e6;--o:#8fd18f;--pl:#e0957a;--r:#c98bd6;--d:#b9b4a8;--m:#86d0ca;--hi:#3b3310;--mark:#d9a441}
+:root[data-theme=light]{--bg:#f3efe6;--panel:#faf7f0;--panel2:#efe9dc;--line:#d6cfbf;--line2:#e6e0d2;--ink:#1c1a16;--dim:#6d675b;--acc:#8c1d1d;--acc2:#9a7a2a;--p:#2d5f8a;--o:#3f6f3a;--pl:#9a4a2a;--r:#6b2a7a;--d:#7a7569;--m:#2a6b66;--hi:#f6e8b0;--mark:#8c1d1d}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:14.5px/1.5 var(--sans);font-feature-settings:"ss01","cv05"}
 /* masthead */

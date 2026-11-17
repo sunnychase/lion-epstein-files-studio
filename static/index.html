@@ -6,7 +6,7 @@
 <title>The Epstein Files - Lion Studios</title>
 <meta name="copyright" content="(c) 2026 Sunny Chase - Lion Studios. All rights reserved.">
 <link rel="stylesheet" href="fonts/fonts.css"><link rel="stylesheet" href="app.css">
-<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var q=new URLSearchParams(location.search).get("theme");var t=q||localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
 <body>
 <header>
@@ -103,7 +103,7 @@
     <select id="myflag"><option value="">any flag</option><option value="structuring">structuring (just under $10,000)</option><option value="round-large">round ≥ $100,000</option><option value="big">≥ $1 million</option><option value="to-individual">paid to an individual</option><option value="cash">cash</option><option value="foreign">foreign place on the page</option></select>
     <select id="myverb"><option value="">any kind</option><option>wire</option><option>transfer</option><option>paid</option><option>received</option><option>deposit</option><option>withdrawal</option><option>check</option><option>invoice</option><option>loan</option><option>fee</option><option>settlement</option><option>donation</option><option>cash</option><option>purchase</option><option>salary</option><option>trust</option></select>
     <select id="mysort"><option value="amount">largest first</option><option value="flags">most flags</option><option value="page">by page</option></select><select id="myrel"><option value="2" selected>pages with Epstein or Maxwell</option><option value="1">pages with Epstein's circle</option><option value="0">every page</option></select><label class="meta"><input type="checkbox" id="mypress"> include press / newsletter pages</label><button class="act" onclick="loadMoney()">Follow the money</button><button class="sm" ${""}onclick="$('#k3').value='paid';$('#c3').value='Jeffrey Epstein';$('#m3').value='1';document.querySelector('#tabs button[data-t=g3d]').click();draw3d()">payment network in 3D</button></div>
-  <div class="notice" id="mynote" style="border-color:#d2b45a;background:#1f1a0e;color:#f2e2b0"></div>
+  <div class="notice" id="mynote"></div>
   <div class="cols"><div id="mysum" class="card"></div><div id="mylist" class="card"></div></div>
 </section>
 
@@ -320,6 +320,6 @@ window.addEventListener('hashchange',route);
 stats().then(()=>{route();if(!location.hash)loadDash()});
 </script>
 <script src="globe.js"></script>
-<script>(function(){var b=document.getElementById('themebtn');if(!b)return;b.onclick=function(){var d=document.documentElement;var n=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}}})();</script>
+<script>(function(){var b=document.getElementById('themebtn');if(!b)return;b.onclick=function(){var d=document.documentElement;var n=d.getAttribute('data-theme')==='light'?'dark':'light';d.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}}})();</script>
 </body>
 </html>
